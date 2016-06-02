@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047099C81D00405A0066978B /* YTNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047099C71D00405A0066978B /* YTNavController.m */; };
+		047099CF1D004BA40066978B /* YTSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047099CE1D004BA40066978B /* YTSearchController.m */; };
+		04BEB9C81CFFF4ED00C272FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB9C71CFFF4ED00C272FC /* main.m */; };
+		04BEB9D11CFFF4ED00C272FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BEB9CF1CFFF4ED00C272FC /* Main.storyboard */; };
+		04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BEB9D21CFFF4ED00C272FC /* Assets.xcassets */; };
+		04BEB9D61CFFF4ED00C272FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BEB9D41CFFF4ED00C272FC /* LaunchScreen.storyboard */; };
+		04BEB9E11CFFF4ED00C272FC /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB9E01CFFF4ED00C272FC /* _____Tests.m */; };
+		04BEB9EC1CFFF4ED00C272FC /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB9EB1CFFF4ED00C272FC /* _____UITests.m */; };
+		04BEBA0C1CFFF8FA00C272FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBA021CFFF8FA00C272FC /* AppDelegate.m */; };
+		04BEBA0F1CFFF94400C272FC /* YTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBA0E1CFFF94400C272FC /* YTTabBarController.m */; };
+		04C8233B1D0002A60020A25B /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8233A1D0002A60020A25B /* BookshelfViewController.m */; };
+		04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8233D1D00040A0020A25B /* YTBookstoreViewController.m */; };
+		04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C823401D00045B0020A25B /* YTDiscoverViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04BEB9DD1CFFF4ED00C272FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BEB9BB1CFFF4EC00C272FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04BEB9C21CFFF4EC00C272FC;
+			remoteInfo = "仿搜狗阅读";
+		};
+		04BEB9E81CFFF4ED00C272FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BEB9BB1CFFF4EC00C272FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04BEB9C21CFFF4EC00C272FC;
+			remoteInfo = "仿搜狗阅读";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		047099C61D00405A0066978B /* YTNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavController.h; sourceTree = "<group>"; };
+		047099C71D00405A0066978B /* YTNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavController.m; sourceTree = "<group>"; };
+		047099CD1D004BA40066978B /* YTSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSearchController.h; sourceTree = "<group>"; };
+		047099CE1D004BA40066978B /* YTSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchController.m; sourceTree = "<group>"; };
+		04BEB9C31CFFF4EC00C272FC /* 仿搜狗阅读.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "仿搜狗阅读.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BEB9C71CFFF4ED00C272FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04BEB9D01CFFF4ED00C272FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04BEB9D21CFFF4ED00C272FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04BEB9D51CFFF4ED00C272FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04BEB9D71CFFF4ED00C272FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BEB9DC1CFFF4ED00C272FC /* 仿搜狗阅读Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "仿搜狗阅读Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BEB9E01CFFF4ED00C272FC /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
+		04BEB9E21CFFF4ED00C272FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BEB9E71CFFF4ED00C272FC /* 仿搜狗阅读UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "仿搜狗阅读UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BEB9EB1CFFF4ED00C272FC /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
+		04BEB9ED1CFFF4ED00C272FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BEBA011CFFF8FA00C272FC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04BEBA021CFFF8FA00C272FC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04BEBA0D1CFFF94400C272FC /* YTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTabBarController.h; sourceTree = "<group>"; };
+		04BEBA0E1CFFF94400C272FC /* YTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTabBarController.m; sourceTree = "<group>"; };
+		04C823391D0002A60020A25B /* BookshelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfViewController.h; sourceTree = "<group>"; };
+		04C8233A1D0002A60020A25B /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelfViewController.m; sourceTree = "<group>"; };
+		04C8233C1D00040A0020A25B /* YTBookstoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTBookstoreViewController.h; sourceTree = "<group>"; };
+		04C8233D1D00040A0020A25B /* YTBookstoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBookstoreViewController.m; sourceTree = "<group>"; };
+		04C8233F1D00045B0020A25B /* YTDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDiscoverViewController.h; sourceTree = "<group>"; };
+		04C823401D00045B0020A25B /* YTDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTDiscoverViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04BEB9C01CFFF4EC00C272FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BEB9D91CFFF4ED00C272FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BEB9E41CFFF4ED00C272FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047099C91D004B820066978B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				047099CA1D004B820066978B /* Controller */,
+				047099CB1D004B820066978B /* Model */,
+				047099CC1D004B820066978B /* View */,
+			);
+			name = Search;
+			path = Lib/Search;
+			sourceTree = "<group>";
+		};
+		047099CA1D004B820066978B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				047099CD1D004BA40066978B /* YTSearchController.h */,
+				047099CE1D004BA40066978B /* YTSearchController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		047099CB1D004B820066978B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		047099CC1D004B820066978B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04BEB9BA1CFFF4EC00C272FC = {
+			isa = PBXGroup;
+			children = (
+				04BEB9C51CFFF4ED00C272FC /* 仿搜狗阅读 */,
+				04BEB9DF1CFFF4ED00C272FC /* 仿搜狗阅读Tests */,
+				04BEB9EA1CFFF4ED00C272FC /* 仿搜狗阅读UITests */,
+				04BEB9C41CFFF4EC00C272FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04BEB9C41CFFF4EC00C272FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB9C31CFFF4EC00C272FC /* 仿搜狗阅读.app */,
+				04BEB9DC1CFFF4ED00C272FC /* 仿搜狗阅读Tests.xctest */,
+				04BEB9E71CFFF4ED00C272FC /* 仿搜狗阅读UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04BEB9C51CFFF4ED00C272FC /* 仿搜狗阅读 */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB9F91CFFF8FA00C272FC /* Classes */,
+				04BEB9CF1CFFF4ED00C272FC /* Main.storyboard */,
+				04BEB9D21CFFF4ED00C272FC /* Assets.xcassets */,
+				04BEB9D41CFFF4ED00C272FC /* LaunchScreen.storyboard */,
+				04BEB9D71CFFF4ED00C272FC /* Info.plist */,
+				04BEB9C61CFFF4ED00C272FC /* Supporting Files */,
+			);
+			path = "仿搜狗阅读";
+			sourceTree = "<group>";
+		};
+		04BEB9C61CFFF4ED00C272FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB9C71CFFF4ED00C272FC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04BEB9DF1CFFF4ED00C272FC /* 仿搜狗阅读Tests */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB9E01CFFF4ED00C272FC /* _____Tests.m */,
+				04BEB9E21CFFF4ED00C272FC /* Info.plist */,
+			);
+			path = "仿搜狗阅读Tests";
+			sourceTree = "<group>";
+		};
+		04BEB9EA1CFFF4ED00C272FC /* 仿搜狗阅读UITests */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB9EB1CFFF4ED00C272FC /* _____UITests.m */,
+				04BEB9ED1CFFF4ED00C272FC /* Info.plist */,
+			);
+			path = "仿搜狗阅读UITests";
+			sourceTree = "<group>";
+		};
+		04BEB9F91CFFF8FA00C272FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				047099C91D004B820066978B /* Search */,
+				04C823351D00027E0020A25B /* Bookshelf */,
+				04C823311D00027A0020A25B /* Bookstore */,
+				04C8232D1D0002730020A25B /* Discover */,
+				04BEB9FE1CFFF8FA00C272FC /* Lib */,
+				04BEB9FF1CFFF8FA00C272FC /* Main */,
+				04BEBA001CFFF8FA00C272FC /* Others */,
+				04BEBA0B1CFFF8FA00C272FC /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04BEB9FE1CFFF8FA00C272FC /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		04BEB9FF1CFFF8FA00C272FC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04BEBA0D1CFFF94400C272FC /* YTTabBarController.h */,
+				04BEBA0E1CFFF94400C272FC /* YTTabBarController.m */,
+				047099C61D00405A0066978B /* YTNavController.h */,
+				047099C71D00405A0066978B /* YTNavController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04BEBA001CFFF8FA00C272FC /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				04BEBA011CFFF8FA00C272FC /* AppDelegate.h */,
+				04BEBA021CFFF8FA00C272FC /* AppDelegate.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		04BEBA0B1CFFF8FA00C272FC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		04C8232D1D0002730020A25B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				04C8232E1D0002730020A25B /* Controller */,
+				04C8232F1D0002730020A25B /* Model */,
+				04C823301D0002730020A25B /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		04C8232E1D0002730020A25B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C8233F1D00045B0020A25B /* YTDiscoverViewController.h */,
+				04C823401D00045B0020A25B /* YTDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04C8232F1D0002730020A25B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04C823301D0002730020A25B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04C823311D00027A0020A25B /* Bookstore */ = {
+			isa = PBXGroup;
+			children = (
+				04C823321D00027A0020A25B /* Controller */,
+				04C823331D00027A0020A25B /* Model */,
+				04C823341D00027A0020A25B /* View */,
+			);
+			path = Bookstore;
+			sourceTree = "<group>";
+		};
+		04C823321D00027A0020A25B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C8233C1D00040A0020A25B /* YTBookstoreViewController.h */,
+				04C8233D1D00040A0020A25B /* YTBookstoreViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04C823331D00027A0020A25B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04C823341D00027A0020A25B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04C823351D00027E0020A25B /* Bookshelf */ = {
+			isa = PBXGroup;
+			children = (
+				04C823361D00027E0020A25B /* Controller */,
+				04C823371D00027E0020A25B /* Model */,
+				04C823381D00027E0020A25B /* View */,
+			);
+			path = Bookshelf;
+			sourceTree = "<group>";
+		};
+		04C823361D00027E0020A25B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C823391D0002A60020A25B /* BookshelfViewController.h */,
+				04C8233A1D0002A60020A25B /* BookshelfViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04C823371D00027E0020A25B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04C823381D00027E0020A25B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04BEB9C21CFFF4EC00C272FC /* 仿搜狗阅读 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BEB9F01CFFF4ED00C272FC /* Build configuration list for PBXNativeTarget "仿搜狗阅读" */;
+			buildPhases = (
+				04BEB9BF1CFFF4EC00C272FC /* Sources */,
+				04BEB9C01CFFF4EC00C272FC /* Frameworks */,
+				04BEB9C11CFFF4EC00C272FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "仿搜狗阅读";
+			productName = "仿搜狗阅读";
+			productReference = 04BEB9C31CFFF4EC00C272FC /* 仿搜狗阅读.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04BEB9DB1CFFF4ED00C272FC /* 仿搜狗阅读Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BEB9F31CFFF4ED00C272FC /* Build configuration list for PBXNativeTarget "仿搜狗阅读Tests" */;
+			buildPhases = (
+				04BEB9D81CFFF4ED00C272FC /* Sources */,
+				04BEB9D91CFFF4ED00C272FC /* Frameworks */,
+				04BEB9DA1CFFF4ED00C272FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BEB9DE1CFFF4ED00C272FC /* PBXTargetDependency */,
+			);
+			name = "仿搜狗阅读Tests";
+			productName = "仿搜狗阅读Tests";
+			productReference = 04BEB9DC1CFFF4ED00C272FC /* 仿搜狗阅读Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04BEB9E61CFFF4ED00C272FC /* 仿搜狗阅读UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BEB9F61CFFF4ED00C272FC /* Build configuration list for PBXNativeTarget "仿搜狗阅读UITests" */;
+			buildPhases = (
+				04BEB9E31CFFF4ED00C272FC /* Sources */,
+				04BEB9E41CFFF4ED00C272FC /* Frameworks */,
+				04BEB9E51CFFF4ED00C272FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BEB9E91CFFF4ED00C272FC /* PBXTargetDependency */,
+			);
+			name = "仿搜狗阅读UITests";
+			productName = "仿搜狗阅读UITests";
+			productReference = 04BEB9E71CFFF4ED00C272FC /* 仿搜狗阅读UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04BEB9BB1CFFF4EC00C272FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YT;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = YinTokey;
+				TargetAttributes = {
+					04BEB9C21CFFF4EC00C272FC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 94C84ESAZ6;
+					};
+					04BEB9DB1CFFF4ED00C272FC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 04BEB9C21CFFF4EC00C272FC;
+					};
+					04BEB9E61CFFF4ED00C272FC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 04BEB9C21CFFF4EC00C272FC;
+					};
+				};
+			};
+			buildConfigurationList = 04BEB9BE1CFFF4EC00C272FC /* Build configuration list for PBXProject "仿搜狗阅读" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04BEB9BA1CFFF4EC00C272FC;
+			productRefGroup = 04BEB9C41CFFF4EC00C272FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04BEB9C21CFFF4EC00C272FC /* 仿搜狗阅读 */,
+				04BEB9DB1CFFF4ED00C272FC /* 仿搜狗阅读Tests */,
+				04BEB9E61CFFF4ED00C272FC /* 仿搜狗阅读UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04BEB9C11CFFF4EC00C272FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BEB9D61CFFF4ED00C272FC /* LaunchScreen.storyboard in Resources */,
+				04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */,
+				04BEB9D11CFFF4ED00C272FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BEB9DA1CFFF4ED00C272FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BEB9E51CFFF4ED00C272FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04BEB9BF1CFFF4EC00C272FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C8233B1D0002A60020A25B /* BookshelfViewController.m in Sources */,
+				04BEBA0C1CFFF8FA00C272FC /* AppDelegate.m in Sources */,
+				047099C81D00405A0066978B /* YTNavController.m in Sources */,
+				04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */,
+				04BEBA0F1CFFF94400C272FC /* YTTabBarController.m in Sources */,
+				04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */,
+				047099CF1D004BA40066978B /* YTSearchController.m in Sources */,
+				04BEB9C81CFFF4ED00C272FC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BEB9D81CFFF4ED00C272FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BEB9E11CFFF4ED00C272FC /* _____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BEB9E31CFFF4ED00C272FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BEB9EC1CFFF4ED00C272FC /* _____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04BEB9DE1CFFF4ED00C272FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04BEB9C21CFFF4EC00C272FC /* 仿搜狗阅读 */;
+			targetProxy = 04BEB9DD1CFFF4ED00C272FC /* PBXContainerItemProxy */;
+		};
+		04BEB9E91CFFF4ED00C272FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04BEB9C21CFFF4EC00C272FC /* 仿搜狗阅读 */;
+			targetProxy = 04BEB9E81CFFF4ED00C272FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04BEB9CF1CFFF4ED00C272FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04BEB9D01CFFF4ED00C272FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04BEB9D41CFFF4ED00C272FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04BEB9D51CFFF4ED00C272FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04BEB9EE1CFFF4ED00C272FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04BEB9EF1CFFF4ED00C272FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04BEB9F11CFFF4ED00C272FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "仿搜狗阅读/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fangsougou;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		04BEB9F21CFFF4ED00C272FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "仿搜狗阅读/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fangsougou;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		04BEB9F41CFFF4ED00C272FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "仿搜狗阅读Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Q.-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/仿搜狗阅读.app/仿搜狗阅读";
+			};
+			name = Debug;
+		};
+		04BEB9F51CFFF4ED00C272FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "仿搜狗阅读Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Q.-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/仿搜狗阅读.app/仿搜狗阅读";
+			};
+			name = Release;
+		};
+		04BEB9F71CFFF4ED00C272FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "仿搜狗阅读UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Q.-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "仿搜狗阅读";
+			};
+			name = Debug;
+		};
+		04BEB9F81CFFF4ED00C272FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "仿搜狗阅读UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Q.-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "仿搜狗阅读";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04BEB9BE1CFFF4EC00C272FC /* Build configuration list for PBXProject "仿搜狗阅读" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BEB9EE1CFFF4ED00C272FC /* Debug */,
+				04BEB9EF1CFFF4ED00C272FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BEB9F01CFFF4ED00C272FC /* Build configuration list for PBXNativeTarget "仿搜狗阅读" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BEB9F11CFFF4ED00C272FC /* Debug */,
+				04BEB9F21CFFF4ED00C272FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BEB9F31CFFF4ED00C272FC /* Build configuration list for PBXNativeTarget "仿搜狗阅读Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BEB9F41CFFF4ED00C272FC /* Debug */,
+				04BEB9F51CFFF4ED00C272FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BEB9F61CFFF4ED00C272FC /* Build configuration list for PBXNativeTarget "仿搜狗阅读UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BEB9F71CFFF4ED00C272FC /* Debug */,
+				04BEB9F81CFFF4ED00C272FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04BEB9BB1CFFF4EC00C272FC /* Project object */;
+}
