@@ -7,8 +7,10 @@
 //
 
 #import "BookshelfViewController.h"
-
+#import "YTSearchController.h"
 @interface BookshelfViewController ()
+- (IBAction)searchBtnClick:(id)sender;
+
 
 @end
 
@@ -90,4 +92,16 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
+- (IBAction)searchBtnClick:(id)sender {
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    YTSearchController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
+    
+    [[self navigationController]pushViewController:searchVC animated:NO];
+}
 @end

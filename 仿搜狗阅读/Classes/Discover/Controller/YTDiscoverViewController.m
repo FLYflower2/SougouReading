@@ -7,9 +7,12 @@
 //
 
 #import "YTDiscoverViewController.h"
-
+#import "YTSearchController.h"
+#import "YTSearchViewController.h"
 @interface YTDiscoverViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *discoverWebView;
+
+- (IBAction)searchBtnClick:(id)sender;
 
 @end
 
@@ -18,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.discoverWebView.scrollView.bounces = NO;
-    
+
+
     //加载网络地址
   //  self.discoverWebView.delegate = self;
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://k.sogou.com/abs/ios/v3/find"]];
@@ -27,19 +31,23 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+
+
+
+- (IBAction)searchBtnClick:(id)sender {
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
+    
+
+
+    [[self navigationController]pushViewController:searchVC animated:NO];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -44,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="35" y="-673"/>
         </scene>
-        <!--书架-->
+        <!--搜狗阅读-->
         <scene sceneID="Vc4-1u-gVT">
             <objects>
                 <collectionViewController id="fpR-NT-pbL" customClass="BookshelfViewController" sceneMemberID="viewController">
@@ -73,7 +74,21 @@
                             <outlet property="delegate" destination="fpR-NT-pbL" id="qy5-iN-dNc"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="书架" id="udO-im-EVr"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="搜狗阅读" id="udO-im-EVr">
+                        <rightBarButtonItems>
+                            <barButtonItem image="addBookIcon" id="aKG-K2-VGc">
+                                <color key="tintColor" red="0.97825420829999998" green="1" blue="0.95599642610000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                            <barButtonItem image="bookShelfSearchBtn" id="68S-zO-9yL">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="searchBtnClick:" destination="fpR-NT-pbL" id="bDn-tg-eOn"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CB-HO-d82" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,13 +134,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="发现" id="TO4-Xj-zM7">
-                        <barButtonItem key="rightBarButtonItem" image="search_sousuoicon" style="plain" id="3EQ-Ex-e4G">
+                        <barButtonItem key="rightBarButtonItem" image="bookShelfSearchBtn" style="plain" id="3EQ-Ex-e4G">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="II3-gP-jH2" kind="show" id="hih-iF-9fS"/>
+                                <action selector="searchBtnClick:" destination="Eh3-9U-Agj" id="EZh-qQ-oj4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="discoverWebView" destination="u7e-tu-hWj" id="9x2-k9-xaY"/>
@@ -135,38 +151,34 @@
             </objects>
             <point key="canvasLocation" x="473" y="696"/>
         </scene>
-        <!--Search Controller-->
-        <scene sceneID="0wA-Eg-Ba2">
+        <!--Search View Controller-->
+        <scene sceneID="ac3-VG-1Lb">
             <objects>
-                <viewController id="II3-gP-jH2" customClass="YTSearchController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="goU-VE-SKF"/>
-                        <viewControllerLayoutGuide type="bottom" id="sxv-nW-wg6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y3j-GG-9ao">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                <tableViewController storyboardIdentifier="searchVC" hidesBottomBarWhenPushed="YES" id="cxT-nr-QPt" customClass="YTSearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7gv-Em-5Bk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETX-6e-TbU">
-                                <rect key="frame" x="137" y="175" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vby-W7-HbH">
-                        <barButtonItem key="rightBarButtonItem" title="取消" id="IDa-A0-iOP">
-                            <connections>
-                                <action selector="cancelBtnClick:" destination="II3-gP-jH2" id="yev-Kc-UWg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0bL-Oe-iDJ">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bL-Oe-iDJ" id="sge-e6-FqY">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cxT-nr-QPt" id="I99-KS-lmw"/>
+                            <outlet property="delegate" destination="cxT-nr-QPt" id="QDq-Bo-Oe9"/>
+                        </connections>
+                    </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IyL-0w-UQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9U-hN-npk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="462"/>
+            <point key="canvasLocation" x="845" y="475"/>
         </scene>
         <!--书城-->
         <scene sceneID="I3k-Hm-ztw">
@@ -200,7 +212,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="书城" id="Elh-EW-UxO"/>
+                    <navigationItem key="navigationItem" title="书城" id="Elh-EW-UxO">
+                        <barButtonItem key="rightBarButtonItem" image="bookShelfSearchBtn" id="Tzo-BE-DM8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="searchBtnClick:" destination="BYW-kr-Qzt" id="wOi-eb-Iuf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7K-tb-NdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,12 +228,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addBookIcon" width="20" height="20"/>
+        <image name="bookShelfSearchBtn" width="35" height="35"/>
         <image name="bookshelftab_nl" width="23" height="23"/>
         <image name="bookshelftab_sl" width="23" height="22"/>
         <image name="bookstoretab_nl" width="23" height="23"/>
         <image name="bookstoretab_sl" width="23" height="23"/>
         <image name="faxiantab_nl" width="23" height="23"/>
         <image name="faxiantab_sl" width="23" height="23"/>
-        <image name="search_sousuoicon" width="20" height="20"/>
     </resources>
 </document>

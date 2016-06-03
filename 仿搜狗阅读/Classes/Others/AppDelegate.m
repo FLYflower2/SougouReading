@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //防止界面跳转，出现黑块
+    self.window.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 
