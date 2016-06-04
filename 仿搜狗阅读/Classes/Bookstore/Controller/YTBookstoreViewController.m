@@ -7,10 +7,11 @@
 //
 
 #import "YTBookstoreViewController.h"
-#import "YTSearchController.h"
+#import "YTSearchViewController.h"
 @interface YTBookstoreViewController ()
 
 - (IBAction)searchBtnClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *bookstoreWebView;
 
 @end
 
@@ -18,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
+    self.bookstoreWebView.scrollView.bounces = NO;
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://k.sogou.com/abs/ios/v3/girl?gender=1"]];
+    [self.bookstoreWebView loadRequest:request];
 
 }
 
@@ -38,14 +42,8 @@
 */
 
 - (IBAction)searchBtnClick:(id)sender {
-    CATransition* transition = [CATransition animation];
-    transition.duration = 0.5;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
-    transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
-    [self.navigationController.view.layer addAnimation:transition forKey:nil];
-    
-    YTSearchController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
+    [YTNavAnimation NavPushAnimation:self.navigationController.view];
+    YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
     
     [[self navigationController]pushViewController:searchVC animated:NO];
 

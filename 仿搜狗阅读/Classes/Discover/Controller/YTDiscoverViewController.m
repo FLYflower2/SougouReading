@@ -7,7 +7,7 @@
 //
 
 #import "YTDiscoverViewController.h"
-#import "YTSearchController.h"
+
 #import "YTSearchViewController.h"
 @interface YTDiscoverViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *discoverWebView;
@@ -37,17 +37,8 @@
 
 
 - (IBAction)searchBtnClick:(id)sender {
-    CATransition* transition = [CATransition animation];
-    transition.duration = 0.5;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
-    transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
-    [self.navigationController.view.layer addAnimation:transition forKey:nil];
-    
+    [YTNavAnimation NavPushAnimation:self.navigationController.view];
     YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
-    
-
-
     [[self navigationController]pushViewController:searchVC animated:NO];
 }
 @end

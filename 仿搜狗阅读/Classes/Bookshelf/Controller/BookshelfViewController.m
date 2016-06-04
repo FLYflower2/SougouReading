@@ -7,7 +7,7 @@
 //
 
 #import "BookshelfViewController.h"
-#import "YTSearchController.h"
+
 @interface BookshelfViewController ()
 - (IBAction)searchBtnClick:(id)sender;
 
@@ -20,6 +20,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    //导航栏设置
     UIImage *image = [self.tabBarItem.selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.tabBarItem.selectedImage = image;
     [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor redColor]} forState:UIControlStateSelected];
@@ -93,14 +96,8 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 - (IBAction)searchBtnClick:(id)sender {
-    CATransition* transition = [CATransition animation];
-    transition.duration = 0.5;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
-    transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
-    [self.navigationController.view.layer addAnimation:transition forKey:nil];
-    
-    YTSearchController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
+    [YTNavAnimation NavPushAnimation:self.navigationController.view];
+    UISearchController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
     
     [[self navigationController]pushViewController:searchVC animated:NO];
 }

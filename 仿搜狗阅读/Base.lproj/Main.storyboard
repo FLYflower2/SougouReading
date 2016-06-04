@@ -155,16 +155,16 @@
         <scene sceneID="ac3-VG-1Lb">
             <objects>
                 <tableViewController storyboardIdentifier="searchVC" hidesBottomBarWhenPushed="YES" id="cxT-nr-QPt" customClass="YTSearchViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7gv-Em-5Bk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="7gv-Em-5Bk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0bL-Oe-iDJ">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="0bL-Oe-iDJ">
+                                <rect key="frame" x="0.0" y="28" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bL-Oe-iDJ" id="sge-e6-FqY">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -183,9 +183,8 @@
         <!--书城-->
         <scene sceneID="I3k-Hm-ztw">
             <objects>
-                <navigationController toolbarHidden="NO" id="DdD-pb-k8u" customClass="YTNavController" sceneMemberID="viewController">
+                <navigationController id="DdD-pb-k8u" customClass="YTNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="书城" image="bookstoretab_nl" selectedImage="bookstoretab_sl" id="OZx-Ud-tTc"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3Lg-bn-gkU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -208,9 +207,21 @@
                         <viewControllerLayoutGuide type="bottom" id="daQ-sc-Bar"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qy5-pb-8d3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgt-nL-cmW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bgt-nL-cmW" firstAttribute="leading" secondItem="qy5-pb-8d3" secondAttribute="leading" id="IHl-92-nqb"/>
+                            <constraint firstItem="daQ-sc-Bar" firstAttribute="top" secondItem="Bgt-nL-cmW" secondAttribute="bottom" id="Oso-nx-5ee"/>
+                            <constraint firstItem="Bgt-nL-cmW" firstAttribute="top" secondItem="HZ8-fW-Y67" secondAttribute="bottom" id="eLv-P4-3QQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Bgt-nL-cmW" secondAttribute="trailing" id="kFX-I7-hHR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="书城" id="Elh-EW-UxO">
                         <barButtonItem key="rightBarButtonItem" image="bookShelfSearchBtn" id="Tzo-BE-DM8">
@@ -220,11 +231,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bookstoreWebView" destination="Bgt-nL-cmW" id="v78-1F-cUW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7K-tb-NdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="-25"/>
+            <point key="canvasLocation" x="435" y="-13"/>
         </scene>
     </scenes>
     <resources>

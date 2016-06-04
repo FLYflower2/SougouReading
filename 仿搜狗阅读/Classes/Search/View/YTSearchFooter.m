@@ -58,15 +58,19 @@ static NSInteger const kButtonCount = 10;
             button.backgroundColor = [UIColor whiteColor];
             button.tag = index;
             button.titleLabel.font = [UIFont systemFontOfSize:14];
+            [button setBackgroundImage:[UIImage imageNamed:@"buttonBackground"] forState:UIControlStateHighlighted];
             if (index == 9) {
-                [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+                [button setTitleColor:RGB(220, 41, 32) forState:UIControlStateNormal];
+                [button setImage:[UIImage imageNamed:@"BookContent_huanyuanshuaxin_sl"] forState:UIControlStateNormal];
+                [button setContentMode:UIViewContentModeLeft];
+                
                 [button addTarget:self action:@selector(changeKeyWord:) forControlEvents:UIControlEventTouchUpInside];
             }else{
                 [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [button addTarget:self action:@selector(search:) forControlEvents:UIControlEventTouchUpInside];
             }
             [_buttonView addSubview:button];
-            //[button addTarget:self action:@selector(search:) forControlEvents:UIControlEventTouchUpInside];
+          
         }
         
     }

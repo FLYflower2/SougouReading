@@ -14,13 +14,15 @@
 
 #import "YTSearchBar.h"
 #import "UIBarButtonItem+Extension.h"
+#import "YTNavAnimation.h"
+
 
 #define YTUserDefaults [NSUserDefaults standardUserDefaults]
 #define YTScreenBounds [UIScreen mainScreen].bounds
 #define YTScreenWidth [UIScreen mainScreen].bounds.size.width
 #define YTScreenHeight [UIScreen mainScreen].bounds.size.height
-
-
+#define keyWordsUrl @"http://wap.sogou.com/book/sgapp_ranking_u.jsp"
+#define searchUrl @"http://api.apt.k.sogou.com/apt/app/search"
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
 /**
