@@ -37,13 +37,19 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbV-QK-Mv2">
                     <rect key="frame" x="108" y="10" width="100" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="author" destination="teE-hG-6ey" id="WvW-vA-iiq"/>
+                <outlet property="bookImgView" destination="5XW-e4-IKH" id="Dls-ph-1fv"/>
+                <outlet property="bookName" destination="pbV-QK-Mv2" id="dVw-2c-iIE"/>
+                <outlet property="status" destination="cFg-BM-fJf" id="sSv-Pa-zJd"/>
+            </connections>
             <point key="canvasLocation" x="396" y="-22"/>
         </view>
     </objects>

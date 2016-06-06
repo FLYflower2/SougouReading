@@ -8,8 +8,11 @@
 
 #import "YTBookstoreViewController.h"
 #import "YTSearchViewController.h"
-@interface YTBookstoreViewController ()
-
+@interface YTBookstoreViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *failImgView;
+@property (weak, nonatomic) IBOutlet UIButton *refreshBtn;
+@property (weak, nonatomic) IBOutlet UILabel *failLabel;
+- (IBAction)refreshBtnClick:(id)sender;
 - (IBAction)searchBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *bookstoreWebView;
 
@@ -20,26 +23,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.failImgView.hidden = YES;
+    self.failLabel.hidden = YES;
+    self.refreshBtn.hidden = YES;
+    
+    self.bookstoreWebView.delegate = self;
     self.bookstoreWebView.scrollView.bounces = NO;
+    self.bookstoreWebView.backgroundColor = [UIColor whiteColor];
+    [self bookStoreWebViewRequest];
+}
+
+- (void)bookStoreWebViewRequest{
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://k.sogou.com/abs/ios/v3/girl?gender=1"]];
     [self.bookstoreWebView loadRequest:request];
-
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)refreshBtnClick:(id)sender {
+    [self bookStoreWebViewRequest];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)searchBtnClick:(id)sender {
     [YTNavAnimation NavPushAnimation:self.navigationController.view];
@@ -47,5 +48,25 @@
     
     [[self navigationController]pushViewController:searchVC animated:NO];
 
+}
+
+#pragma mark - webview delegate
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [LBProgressHUD showHUDto:self.view animated:NO];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    self.failImgView.hidden = YES;
+    self.failLabel.hidden = YES;
+    self.refreshBtn.hidden = YES;
+    [LBProgressHUD hideAllHUDsForView:self.view animated:NO];
+
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [LBProgressHUD hideAllHUDsForView:self.view animated:NO];
+    self.failImgView.hidden = NO;
+    self.failLabel.hidden = NO;
+    self.refreshBtn.hidden = NO;
 }
 @end
