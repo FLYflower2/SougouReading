@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0400AD6B1D058B5500CAE3F1 /* XTPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400AD6A1D058B5500CAE3F1 /* XTPopView.m */; };
 		040870DB1D03F52A00DCB910 /* YTRotateRefreshIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 040870DA1D03F52A00DCB910 /* YTRotateRefreshIcon.m */; };
+		040C7B091D09C89400D11610 /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C7B061D09C89400D11610 /* LeftSlideViewController.m */; };
+		040C7B0A1D09C89400D11610 /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C7B081D09C89400D11610 /* UIView_extra.m */; };
 		04110B541D053CB00062AA61 /* YTsearchAllResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 04110B531D053CB00062AA61 /* YTsearchAllResult.m */; };
 		04110B571D054A2B0062AA61 /* LBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04110B561D054A2B0062AA61 /* LBProgressHUD.m */; };
 		046AAF351D0323FF00E0ED80 /* YTResultCellNobkey.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046AAF341D0323FF00E0ED80 /* YTResultCellNobkey.xib */; };
@@ -64,6 +66,10 @@
 		0400AD6A1D058B5500CAE3F1 /* XTPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTPopView.m; sourceTree = "<group>"; };
 		040870D91D03F52A00DCB910 /* YTRotateRefreshIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTRotateRefreshIcon.h; sourceTree = "<group>"; };
 		040870DA1D03F52A00DCB910 /* YTRotateRefreshIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTRotateRefreshIcon.m; sourceTree = "<group>"; };
+		040C7B051D09C89400D11610 /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
+		040C7B061D09C89400D11610 /* LeftSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlideViewController.m; sourceTree = "<group>"; };
+		040C7B071D09C89400D11610 /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
+		040C7B081D09C89400D11610 /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
 		04110B521D053CB00062AA61 /* YTsearchAllResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTsearchAllResult.h; sourceTree = "<group>"; };
 		04110B531D053CB00062AA61 /* YTsearchAllResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTsearchAllResult.m; sourceTree = "<group>"; };
 		04110B551D054A2B0062AA61 /* LBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressHUD.h; sourceTree = "<group>"; };
@@ -154,6 +160,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040C7B041D09C89400D11610 /* LeftSlideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				040C7B051D09C89400D11610 /* LeftSlideViewController.h */,
+				040C7B061D09C89400D11610 /* LeftSlideViewController.m */,
+				040C7B071D09C89400D11610 /* UIView_extra.h */,
+				040C7B081D09C89400D11610 /* UIView_extra.m */,
+			);
+			path = LeftSlideViewController;
+			sourceTree = "<group>";
+		};
 		048F7E7C1D01AD9C00DF692E /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +314,7 @@
 		04BEB9FE1CFFF8FA00C272FC /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				040C7B041D09C89400D11610 /* LeftSlideViewController */,
 				0400AD691D058B5500CAE3F1 /* XTPopView.h */,
 				0400AD6A1D058B5500CAE3F1 /* XTPopView.m */,
 				04110B551D054A2B0062AA61 /* LBProgressHUD.h */,
@@ -654,9 +672,11 @@
 				04C30DD51D0400D400A123F5 /* YTresultGroup.m in Sources */,
 				048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */,
 				046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */,
+				040C7B091D09C89400D11610 /* LeftSlideViewController.m in Sources */,
 				047099C81D00405A0066978B /* YTNavController.m in Sources */,
 				04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */,
 				048F7E7F1D01ADF100DF692E /* UIBarButtonItem+Extension.m in Sources */,
+				040C7B0A1D09C89400D11610 /* UIView_extra.m in Sources */,
 				0479C4A01D02C62D00C99F84 /* YTNavAnimation.m in Sources */,
 				0400AD6B1D058B5500CAE3F1 /* XTPopView.m in Sources */,
 				040870DB1D03F52A00DCB910 /* YTRotateRefreshIcon.m in Sources */,
