@@ -41,6 +41,17 @@
 		04C8233B1D0002A60020A25B /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8233A1D0002A60020A25B /* BookshelfViewController.m */; };
 		04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C8233D1D00040A0020A25B /* YTBookstoreViewController.m */; };
 		04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C823401D00045B0020A25B /* YTDiscoverViewController.m */; };
+		04CD80351D0A4B9500D839F8 /* YTLeftslideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80341D0A4B9500D839F8 /* YTLeftslideViewController.m */; };
+		04CD803D1D0AA9ED00D839F8 /* YTLeftslideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD803C1D0AA9ED00D839F8 /* YTLeftslideCell.m */; };
+		04CD80401D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD803F1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m */; };
+		04CD80421D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD80411D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib */; };
+		04CD80451D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80441D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m */; };
+		04CD80471D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD80461D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib */; };
+		04CD80541D0AD9AD00D839F8 /* ZFBaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD804B1D0AD9AD00D839F8 /* ZFBaseSettingViewController.m */; };
+		04CD80551D0AD9AD00D839F8 /* ZFSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD804E1D0AD9AD00D839F8 /* ZFSettingGroup.m */; };
+		04CD80561D0AD9AD00D839F8 /* ZFSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80501D0AD9AD00D839F8 /* ZFSettingItem.m */; };
+		04CD80571D0AD9AD00D839F8 /* ZFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80531D0AD9AD00D839F8 /* ZFSettingCell.m */; };
+		04CD805E1D0ADA6D00D839F8 /* YTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD805D1D0ADA6D00D839F8 /* YTSettingViewController.m */; };
 		BCF158A85E79B8D1355D2291 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5189E56C9AFCA79FDB95E690 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +140,26 @@
 		04C8233D1D00040A0020A25B /* YTBookstoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBookstoreViewController.m; sourceTree = "<group>"; };
 		04C8233F1D00045B0020A25B /* YTDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDiscoverViewController.h; sourceTree = "<group>"; };
 		04C823401D00045B0020A25B /* YTDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTDiscoverViewController.m; sourceTree = "<group>"; };
+		04CD80331D0A4B9500D839F8 /* YTLeftslideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YTLeftslideViewController.h; path = ../../Search/Controller/YTLeftslideViewController.h; sourceTree = "<group>"; };
+		04CD80341D0A4B9500D839F8 /* YTLeftslideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YTLeftslideViewController.m; path = ../../Search/Controller/YTLeftslideViewController.m; sourceTree = "<group>"; };
+		04CD803B1D0AA9ED00D839F8 /* YTLeftslideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLeftslideCell.h; sourceTree = "<group>"; };
+		04CD803C1D0AA9ED00D839F8 /* YTLeftslideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLeftslideCell.m; sourceTree = "<group>"; };
+		04CD803E1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLeftslideSectionHeaderView.h; sourceTree = "<group>"; };
+		04CD803F1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLeftslideSectionHeaderView.m; sourceTree = "<group>"; };
+		04CD80411D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTLeftslideSectionHeaderView.xib; sourceTree = "<group>"; };
+		04CD80431D0ABCF100D839F8 /* YTLeftslideSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLeftslideSectionFooterView.h; sourceTree = "<group>"; };
+		04CD80441D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLeftslideSectionFooterView.m; sourceTree = "<group>"; };
+		04CD80461D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTLeftslideSectionFooterView.xib; sourceTree = "<group>"; };
+		04CD804A1D0AD9AD00D839F8 /* ZFBaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBaseSettingViewController.h; sourceTree = "<group>"; };
+		04CD804B1D0AD9AD00D839F8 /* ZFBaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBaseSettingViewController.m; sourceTree = "<group>"; };
+		04CD804D1D0AD9AD00D839F8 /* ZFSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSettingGroup.h; sourceTree = "<group>"; };
+		04CD804E1D0AD9AD00D839F8 /* ZFSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSettingGroup.m; sourceTree = "<group>"; };
+		04CD804F1D0AD9AD00D839F8 /* ZFSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSettingItem.h; sourceTree = "<group>"; };
+		04CD80501D0AD9AD00D839F8 /* ZFSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSettingItem.m; sourceTree = "<group>"; };
+		04CD80521D0AD9AD00D839F8 /* ZFSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSettingCell.h; sourceTree = "<group>"; };
+		04CD80531D0AD9AD00D839F8 /* ZFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSettingCell.m; sourceTree = "<group>"; };
+		04CD805C1D0ADA6D00D839F8 /* YTSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSettingViewController.h; sourceTree = "<group>"; };
+		04CD805D1D0ADA6D00D839F8 /* YTSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSettingViewController.m; sourceTree = "<group>"; };
 		228599889DB1968501D24444 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5189E56C9AFCA79FDB95E690 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8017FD661FBC52663178B312 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -299,6 +330,8 @@
 		04BEB9F91CFFF8FA00C272FC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04CD80581D0ADA5000D839F8 /* Setting */,
+				04CD802F1D0A4B5000D839F8 /* Leftslide */,
 				048F7EA61D01CFA000DF692E /* Search */,
 				04C823351D00027E0020A25B /* Bookshelf */,
 				04C823311D00027A0020A25B /* Bookstore */,
@@ -314,6 +347,7 @@
 		04BEB9FE1CFFF8FA00C272FC /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04CD80481D0AD9AD00D839F8 /* ZFSetting */,
 				040C7B041D09C89400D11610 /* LeftSlideViewController */,
 				0400AD691D058B5500CAE3F1 /* XTPopView.h */,
 				0400AD6A1D058B5500CAE3F1 /* XTPopView.m */,
@@ -459,6 +493,119 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04CD802F1D0A4B5000D839F8 /* Leftslide */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80301D0A4B5000D839F8 /* Controller */,
+				04CD80311D0A4B5000D839F8 /* Model */,
+				04CD80321D0A4B5000D839F8 /* View */,
+			);
+			path = Leftslide;
+			sourceTree = "<group>";
+		};
+		04CD80301D0A4B5000D839F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80331D0A4B9500D839F8 /* YTLeftslideViewController.h */,
+				04CD80341D0A4B9500D839F8 /* YTLeftslideViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CD80311D0A4B5000D839F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CD80321D0A4B5000D839F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04CD803B1D0AA9ED00D839F8 /* YTLeftslideCell.h */,
+				04CD803C1D0AA9ED00D839F8 /* YTLeftslideCell.m */,
+				04CD803E1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.h */,
+				04CD803F1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m */,
+				04CD80411D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib */,
+				04CD80431D0ABCF100D839F8 /* YTLeftslideSectionFooterView.h */,
+				04CD80441D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m */,
+				04CD80461D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04CD80481D0AD9AD00D839F8 /* ZFSetting */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80491D0AD9AD00D839F8 /* Controller */,
+				04CD804C1D0AD9AD00D839F8 /* Model */,
+				04CD80511D0AD9AD00D839F8 /* View */,
+			);
+			path = ZFSetting;
+			sourceTree = "<group>";
+		};
+		04CD80491D0AD9AD00D839F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CD804A1D0AD9AD00D839F8 /* ZFBaseSettingViewController.h */,
+				04CD804B1D0AD9AD00D839F8 /* ZFBaseSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CD804C1D0AD9AD00D839F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CD804D1D0AD9AD00D839F8 /* ZFSettingGroup.h */,
+				04CD804E1D0AD9AD00D839F8 /* ZFSettingGroup.m */,
+				04CD804F1D0AD9AD00D839F8 /* ZFSettingItem.h */,
+				04CD80501D0AD9AD00D839F8 /* ZFSettingItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CD80511D0AD9AD00D839F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80521D0AD9AD00D839F8 /* ZFSettingCell.h */,
+				04CD80531D0AD9AD00D839F8 /* ZFSettingCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04CD80581D0ADA5000D839F8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80591D0ADA5000D839F8 /* Controller */,
+				04CD805A1D0ADA5000D839F8 /* Model */,
+				04CD805B1D0ADA5000D839F8 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		04CD80591D0ADA5000D839F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CD805C1D0ADA6D00D839F8 /* YTSettingViewController.h */,
+				04CD805D1D0ADA6D00D839F8 /* YTSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CD805A1D0ADA5000D839F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CD805B1D0ADA5000D839F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1F1C82B45CE1AB2D2B95FD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,8 +733,10 @@
 			files = (
 				046AAF351D0323FF00E0ED80 /* YTResultCellNobkey.xib in Resources */,
 				048C6B551D02F7B900ED670F /* YTResultCellWithbkey.xib in Resources */,
+				04CD80421D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib in Resources */,
 				04BEB9D61CFFF4ED00C272FC /* LaunchScreen.storyboard in Resources */,
 				04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */,
+				04CD80471D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib in Resources */,
 				04BEB9D11CFFF4ED00C272FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,8 +810,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CD80451D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m in Sources */,
+				04CD80571D0AD9AD00D839F8 /* ZFSettingCell.m in Sources */,
 				048C6B4D1D02E7B000ED670F /* YTparamLoop.m in Sources */,
 				04C8233B1D0002A60020A25B /* BookshelfViewController.m in Sources */,
+				04CD803D1D0AA9ED00D839F8 /* YTLeftslideCell.m in Sources */,
 				048C6B531D02F58100ED670F /* YTResultCellWithbkey.m in Sources */,
 				048F7EB51D01D1CA00DF692E /* YTSearchFooter.m in Sources */,
 				0479C47D1D025A5800C99F84 /* YTsearchKeyWords.m in Sources */,
@@ -670,19 +822,25 @@
 				04110B541D053CB00062AA61 /* YTsearchAllResult.m in Sources */,
 				04C30DD21D03F89700A123F5 /* YTSectionHeaderView.m in Sources */,
 				04C30DD51D0400D400A123F5 /* YTresultGroup.m in Sources */,
+				04CD80551D0AD9AD00D839F8 /* ZFSettingGroup.m in Sources */,
 				048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */,
 				046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */,
 				040C7B091D09C89400D11610 /* LeftSlideViewController.m in Sources */,
 				047099C81D00405A0066978B /* YTNavController.m in Sources */,
 				04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */,
+				04CD80541D0AD9AD00D839F8 /* ZFBaseSettingViewController.m in Sources */,
 				048F7E7F1D01ADF100DF692E /* UIBarButtonItem+Extension.m in Sources */,
 				040C7B0A1D09C89400D11610 /* UIView_extra.m in Sources */,
+				04CD80401D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m in Sources */,
+				04CD805E1D0ADA6D00D839F8 /* YTSettingViewController.m in Sources */,
 				0479C4A01D02C62D00C99F84 /* YTNavAnimation.m in Sources */,
 				0400AD6B1D058B5500CAE3F1 /* XTPopView.m in Sources */,
 				040870DB1D03F52A00DCB910 /* YTRotateRefreshIcon.m in Sources */,
 				048F7EB11D01CFA000DF692E /* YTSearchViewController.m in Sources */,
+				04CD80561D0AD9AD00D839F8 /* ZFSettingItem.m in Sources */,
 				04BEBA0F1CFFF94400C272FC /* YTTabBarController.m in Sources */,
 				04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */,
+				04CD80351D0A4B9500D839F8 /* YTLeftslideViewController.m in Sources */,
 				0479C3E61D0253A000C99F84 /* YTNetCommand.m in Sources */,
 				0479C49D1D0282EA00C99F84 /* YTkeywordsRequest.m in Sources */,
 				04BEB9C81CFFF4ED00C272FC /* main.m in Sources */,

@@ -21,7 +21,7 @@
 @implementation MJRefreshAutoGifFooter
 #pragma mark - 懒加载
 - (UIImageView *)gifView
-{    
+{
     if (!_gifView) {
         UIImageView *gifView = [[UIImageView alloc] init];
         [self addSubview:_gifView = gifView];
@@ -55,7 +55,6 @@
     
     /* 根据图片设置控件的高度 */
     UIImage *image = [images firstObject];
-
     if (image.size.height > self.mj_h) {
         self.mj_h = image.size.height;
     }
@@ -78,7 +77,7 @@
         self.gifView.contentMode = UIViewContentModeCenter;
     } else {
         self.gifView.contentMode = UIViewContentModeRight;
-        self.gifView.mj_w = self.mj_w * 0.5 - 90;
+        self.gifView.mj_w = self.mj_w * 0.5 - 20 - self.stateLabel.mj_textWith * 0.5;
     }
 }
 

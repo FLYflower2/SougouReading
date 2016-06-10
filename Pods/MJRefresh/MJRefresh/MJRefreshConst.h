@@ -53,14 +53,17 @@ UIKIT_EXTERN NSString *const MJRefreshHeaderRefreshingText;
 UIKIT_EXTERN NSString *const MJRefreshAutoFooterIdleText;
 UIKIT_EXTERN NSString *const MJRefreshAutoFooterRefreshingText;
 UIKIT_EXTERN NSString *const MJRefreshAutoFooterNoMoreDataText;
-UIKIT_EXTERN NSString *const MJRefreshAutoFooterPullingText;
 
 UIKIT_EXTERN NSString *const MJRefreshBackFooterIdleText;
 UIKIT_EXTERN NSString *const MJRefreshBackFooterPullingText;
 UIKIT_EXTERN NSString *const MJRefreshBackFooterRefreshingText;
 UIKIT_EXTERN NSString *const MJRefreshBackFooterNoMoreDataText;
 
-// 状态检查 
+UIKIT_EXTERN NSString *const MJRefreshHeaderLastTimeText;
+UIKIT_EXTERN NSString *const MJRefreshHeaderDateTodayText;
+UIKIT_EXTERN NSString *const MJRefreshHeaderNoneLastDateText;
+
+// 状态检查
 #define MJRefreshCheckState \
 MJRefreshState oldState = self.state; \
 if (state == oldState) return; \

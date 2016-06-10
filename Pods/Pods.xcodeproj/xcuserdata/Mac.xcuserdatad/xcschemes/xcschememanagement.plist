@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JVFloatingDrawer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E1D1E8B56A77F8E4DB4FB4B230045F1</key>
+		<key>1EC0DA9332B7491C8F6778E4C6C4A90A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6A1FC43785DC7EE63C635565BAE45C3A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>805428B2635E1AF6B4F5343F6B84BEB1</key>
+		<key>625D968912B53321939D1ABC5AABE1F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B04ADA4E92E457EBEE7A8C4EEE26B345</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B3C760711B585710870482548EF04B3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9E97D96846ABB7C8F33F8E7C212083C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

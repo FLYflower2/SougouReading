@@ -15,6 +15,11 @@
 
 @implementation YTTabBarController
 
+-(void)awakeFromNib{
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 

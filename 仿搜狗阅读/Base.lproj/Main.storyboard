@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="LRz-B5-twa">
             <objects>
-                <tabBarController id="bQS-nl-TR2" customClass="YTTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="bookstoreStoryboardID" id="bQS-nl-TR2" customClass="YTTabBarController" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="aq2-N0-qgk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -26,10 +26,39 @@
             </objects>
             <point key="canvasLocation" x="-391" y="-109"/>
         </scene>
+        <!--Leftslide View Controller-->
+        <scene sceneID="Mvm-2b-myy">
+            <objects>
+                <tableViewController storyboardIdentifier="LeftslideViewControllerStoryboardID" id="I2e-Jx-GyY" customClass="YTLeftslideViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LvG-LW-xbl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PAw-zP-SLW">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAw-zP-SLW" id="ya4-ae-Wcp">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I2e-Jx-GyY" id="kqQ-SW-7i6"/>
+                            <outlet property="delegate" destination="I2e-Jx-GyY" id="K9Q-9S-bs8"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOA-cU-X2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="-787"/>
+        </scene>
         <!--书架-->
         <scene sceneID="EVh-tf-ZqO">
             <objects>
-                <navigationController id="K28-Xk-qFM" customClass="YTNavController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="bookshelfStoryboardID" id="K28-Xk-qFM" customClass="YTNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="书架" image="bookshelftab_nl" selectedImage="bookshelftab_sl" id="Wru-e3-gjW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -81,11 +110,23 @@
                                 <rect key="frame" x="16" y="4" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="personalCenter_avatar_boy"/>
+                                <connections>
+                                    <action selector="iconBtnClick:" destination="fpR-NT-pbL" eventType="touchUpInside" id="myj-5m-j3Y"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="addBookIcon" id="aKG-K2-VGc">
-                                <color key="tintColor" red="0.97825420829999998" green="1" blue="0.95599642610000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <barButtonItem style="plain" id="gSu-82-GlL">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xgx-K1-G0M">
+                                    <rect key="frame" x="284" y="11" width="20" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="addBtn">
+                                        <color key="titleShadowColor" red="0.97825420829999998" green="1" blue="0.95599642610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addBtnClick:" destination="fpR-NT-pbL" eventType="touchUpInside" id="bI9-Na-QbB"/>
+                                    </connections>
+                                </button>
                             </barButtonItem>
                             <barButtonItem image="bookShelfSearchBtn" id="68S-zO-9yL">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,6 +138,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="addBtn" destination="xgx-K1-G0M" id="2Sa-CT-TKt"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CB-HO-d82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +168,7 @@
         <!--发现-->
         <scene sceneID="LUP-JY-QUd">
             <objects>
-                <navigationController id="mWs-T6-PYG" customClass="YTNavController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="discoverStoryboardID" id="mWs-T6-PYG" customClass="YTNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" image="faxiantab_nl" selectedImage="faxiantab_sl" id="2c8-Rf-0lP"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -191,6 +235,9 @@
                                 <rect key="frame" x="16" y="4" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="personalCenter_avatar_boy"/>
+                                <connections>
+                                    <action selector="iconBtnClick:" destination="Eh3-9U-Agj" eventType="touchUpInside" id="qIq-pd-Yo7"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="bookShelfSearchBtn" style="plain" id="3EQ-Ex-e4G">
@@ -263,6 +310,9 @@
                                 <rect key="frame" x="16" y="4" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="personalCenter_avatar_boy"/>
+                                <connections>
+                                    <action selector="iconBtnClick:" destination="CuS-ZW-bJ5" eventType="touchUpInside" id="GhM-mU-TrH"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="bookShelfSearchBtn" id="Zzz-i8-TUN">
@@ -336,7 +386,7 @@
     </scenes>
     <resources>
         <image name="BookShelf_bookshop_fail" width="239" height="180"/>
-        <image name="addBookIcon" width="20" height="20"/>
+        <image name="addBtn" width="96" height="96"/>
         <image name="bookShelfSearchBtn" width="35" height="35"/>
         <image name="bookshelftab_nl" width="23" height="23"/>
         <image name="bookshelftab_sl" width="23" height="22"/>
@@ -344,7 +394,7 @@
         <image name="bookstoretab_sl" width="23" height="23"/>
         <image name="faxiantab_nl" width="23" height="23"/>
         <image name="faxiantab_sl" width="23" height="23"/>
-        <image name="personalCenter_avatar_boy" width="27" height="27"/>
+        <image name="personalCenter_avatar_boy" width="35" height="35"/>
         <image name="search_sousuoicon" width="18" height="18"/>
         <image name="wangluoguzhang_button_normal" width="37" height="15"/>
     </resources>

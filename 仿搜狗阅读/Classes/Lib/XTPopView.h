@@ -55,7 +55,8 @@ typedef NS_ENUM(NSInteger, XTDirectionType)
                          Width:(CGFloat) width
                         Height:(CGFloat) height
                           Type:(XTDirectionType)type
-                         Color:( UIColor * _Nonnull ) color;
+                         Color:( UIColor * _Nonnull ) color
+                     superView:(UIView * _Nonnull)superView;
 
 - (void)popView;
 

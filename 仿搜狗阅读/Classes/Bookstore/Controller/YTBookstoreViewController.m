@@ -8,13 +8,17 @@
 
 #import "YTBookstoreViewController.h"
 #import "YTSearchViewController.h"
+#import "AppDelegate.h"
 @interface YTBookstoreViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *failImgView;
 @property (weak, nonatomic) IBOutlet UIButton *refreshBtn;
 @property (weak, nonatomic) IBOutlet UILabel *failLabel;
 - (IBAction)refreshBtnClick:(id)sender;
 - (IBAction)searchBtnClick:(id)sender;
+- (IBAction)iconBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *bookstoreWebView;
+
+
 
 @end
 
@@ -31,6 +35,10 @@
     self.bookstoreWebView.scrollView.bounces = NO;
     self.bookstoreWebView.backgroundColor = [UIColor whiteColor];
     [self bookStoreWebViewRequest];
+  
+    
+
+    
 }
 
 - (void)bookStoreWebViewRequest{
@@ -49,6 +57,14 @@
     [[self navigationController]pushViewController:searchVC animated:NO];
 
 }
+
+- (IBAction)iconBtnClick:(id)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
+    NSLog(@"open left");
+    
+}
+
+
 
 #pragma mark - webview delegate
 - (void)webViewDidStartLoad:(UIWebView *)webView{

@@ -7,7 +7,7 @@
 //
 
 #import "YTDiscoverViewController.h"
-
+#import "AppDelegate.h"
 #import "YTSearchViewController.h"
 @interface YTDiscoverViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *failImgView;
@@ -16,6 +16,7 @@
 - (IBAction)refreshBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *discoverWebView;
 - (IBAction)searchBtnClick:(id)sender;
+- (IBAction)iconBtnClick:(id)sender;
 
 @end
 
@@ -43,6 +44,10 @@
     [YTNavAnimation NavPushAnimation:self.navigationController.view];
     YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
     [[self navigationController]pushViewController:searchVC animated:NO];
+}
+
+- (IBAction)iconBtnClick:(id)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
 }
 
 

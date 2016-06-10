@@ -13,6 +13,9 @@
 #define Length 5
 #define Length2 15
 @interface XTPopView ()<UITableViewDelegate, UITableViewDataSource>
+{
+    UIView *coverView;
+}
 @property (nonatomic, assign) CGPoint origin;
 
 @property (nonatomic, assign) CGFloat height;
@@ -27,7 +30,7 @@
 
 @implementation XTPopView
 
-- (instancetype)initWithOrigin:(CGPoint)origin Width:(CGFloat)width Height:(CGFloat)height Type:(XTDirectionType)type Color:(UIColor *)color
+- (instancetype)initWithOrigin:(CGPoint)origin Width:(CGFloat)width Height:(CGFloat)height Type:(XTDirectionType)type Color:(UIColor *)color superView:(UIView *)superView
 {
     
     self = [super initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
@@ -46,6 +49,15 @@
         [self addSubview:self.backGoundView];
         // 添加tableview
         [self.backGoundView addSubview:self.tableView];
+        
+        //给superView添加蒙板
+        coverView = [[UIView alloc]init];
+        coverView.frame = superView.bounds;
+        coverView.backgroundColor = [UIColor blackColor];
+        coverView.alpha = 0.3;
+        [superView addSubview:coverView];
+        
+        
     }
     return self;
 }
@@ -271,6 +283,8 @@
     /**
      *  删除 在backGroundView 上的子控件
      */
+    
+    
     NSArray *results = [self.backGoundView subviews];
     
     for (UIView *view in results) {
@@ -283,9 +297,14 @@
         //
         self.backGoundView.frame = CGRectMake(self.origin.x, self.origin.y, 0, 0);
     } completion:^(BOOL finished) {
-        //
+        //移除蒙板
+        [coverView removeFromSuperview];
         [self removeFromSuperview];
+        
     }];
+    
+ 
+    
 }
 #pragma mark -
 - (void)startAnimateView_x:(CGFloat) x
