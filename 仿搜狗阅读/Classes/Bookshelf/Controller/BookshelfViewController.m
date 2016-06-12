@@ -9,18 +9,22 @@
 #import "BookshelfViewController.h"
 #import "AppDelegate.h"
 #import "XTPopView.h"
-@interface BookshelfViewController ()<selectIndexPathDelegate>
+#import "YTBookItem.h"
+#import "YTBookCollectionViewCell.h"
+#import <UIImageView+WebCache.h>
+#import "YTSqliteTool.h"
+#import "YTBookstoreViewController.h"
+@interface BookshelfViewController ()<selectIndexPathDelegate,UIGestureRecognizerDelegate,UICollectionViewDelegateFlowLayout>
 {
-    UIView *coverView;
+    NSMutableArray *booksArr;
+    
+    NSInteger indexRow;
+    BOOL deleteBtnFlag;
 }
 - (IBAction)searchBtnClick:(id)sender;
 - (IBAction)iconBtnClick:(id)sender;
 - (IBAction)addBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
-
-
-
-
 
 @end
 
@@ -31,51 +35,83 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    deleteBtnFlag = YES;
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
-    //添加手势相应，点击其他区域，蒙板消失
-    UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    tapGr.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:tapGr];
+    [self addDoubleTapGesture];
+  
+    [self setupDataBase];
+
     
-    
-    
-    //导航栏设置
-//    UIImage *image = [self.tabBarItem.selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    self.tabBarItem.selectedImage = image;
-//    [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor redColor]} forState:UIControlStateSelected];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    booksArr = [YTBookItem readDatabase];
+    //添加最后一项，是一个带加号的图片
+    YTBookItem *itm = [[YTBookItem alloc]init];
+    itm.imageKey = @"addbtnInshelf";
+    [booksArr addObject:itm];
+    
+    
+    [self.collectionView reloadData];
+    
+}
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(13,8,10,8);
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of items
-    return 0;
+    return booksArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    YTBookCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+    YTBookItem *item = booksArr[indexPath.row];
+    cell.imageView.image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:item.imageKey];
+    cell.bookNameView.text = item.name;
+    //如果小说没有封面，就使用默认图
+    if (cell.imageView.image == nil) {
+        cell.imageView.image = [UIImage imageNamed:@"default_cover_blue"];
+    }
+    //如果是最后一项，则显示加号图
+    if ([item.imageKey isEqualToString:@"addbtnInshelf"]) {
+        cell.imageView.image = [UIImage imageNamed:@"addbtnInshelf"];
+        
+    }
     
-    // Configure the cell
+    cell.indexPath = indexPath;
+    cell.deleteBtn.hidden = deleteBtnFlag?YES:NO;
+    cell.delegate =  self;
     
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    //如果点击最后一项，就跳转到书城界面
+    if (indexPath.row == booksArr.count -1 ) {
+         self.tabBarController.selectedIndex = 1;
+    }
+                                              
+                                              
+}
 
 
 - (IBAction)searchBtnClick:(id)sender {
     [YTNavAnimation NavPushAnimation:self.navigationController.view];
     UISearchController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
-    
     [[self navigationController]pushViewController:searchVC animated:NO];
 }
 
@@ -89,8 +125,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
-- (void)selectIndexPathRow:(NSInteger)index
-{
+- (void)selectIndexPathRow:(NSInteger)index{
     switch (index) {
         case 0:
         {
@@ -112,11 +147,7 @@ static NSString * const reuseIdentifier = @"Cell";
             break;
     }
 }
-
 - (void)setupPopView{
-    
-
-    
     
     CGPoint point = CGPointMake(_addBtn.center.x,_addBtn.center.y + 45);
     XTPopView *view1 = [[XTPopView alloc] initWithOrigin:point Width:130 Height:40 * 3 Type:XTTypeOfUpRight Color:[UIColor whiteColor] superView:self.view];
@@ -128,15 +159,30 @@ static NSString * const reuseIdentifier = @"Cell";
     view1.delegate = self;
     [view1 popView];
 }
-
--(void)viewTapped:(UITapGestureRecognizer*)tapGr
-{
-    //移除蒙板
-    coverView.frame = self.view.bounds;
-    coverView.backgroundColor = [UIColor blackColor];
-    coverView.alpha = 0.5;
-    [coverView removeFromSuperview];
+- (void)hideAllDeleteBtn{
+    if (!deleteBtnFlag) {
+        deleteBtnFlag = YES;
+        [self.collectionView reloadData];
+    }
     
 }
-
+- (void)showAllDeleteBtn{
+    deleteBtnFlag = NO;
+    [self.collectionView reloadData];
+}
+- (void)handleDoubleTap:(UITapGestureRecognizer *) gestureRecognizer{
+    [self hideAllDeleteBtn];
+    
+}
+- (void)addDoubleTapGesture{
+    UITapGestureRecognizer *doubletap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    [doubletap setNumberOfTapsRequired:2];
+    [self.view addGestureRecognizer:doubletap];
+}
+- (void)setupDataBase{
+    //    //创建表
+    NSString *sql = @"create table if not exists t_bookshelf (id integer primary key autoincrement,book text,imagekey text);";
+    [YTSqliteTool execWithSql:sql];
+    
+}
 @end

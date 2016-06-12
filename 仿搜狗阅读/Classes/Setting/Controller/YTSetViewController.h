@@ -1,5 +1,5 @@
 //
-//  YTLeftslideSectionHeaderView.h
+//  YTSetViewController.h
 //  仿搜狗阅读
 //
 //  Created by Mac on 16/6/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YTLeftslideSectionHeaderView : UIView
-
-+ (void)addHeaderToView:(UIView *)superView;
+@interface YTSetViewController : UITableViewController
 
 @end

@@ -57,10 +57,10 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-fo-AL9">
-                    <rect key="frame" x="237" y="26" width="75" height="28"/>
+                    <rect key="frame" x="234" y="27" width="86" height="28"/>
                     <color key="backgroundColor" red="0.97825420829999998" green="1" blue="0.95599642610000002" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="开始阅读" backgroundImage="tijiao_nl">
+                    <state key="normal" title="开始阅读" backgroundImage="ksyd(hong)_nl">
                         <color key="titleColor" red="1" green="0.14049873069999999" blue="0.10085635079999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -80,6 +80,6 @@
         </view>
     </objects>
     <resources>
-        <image name="tijiao_nl" width="36" height="20"/>
+        <image name="ksyd(hong)_nl" width="70" height="23"/>
     </resources>
 </document>

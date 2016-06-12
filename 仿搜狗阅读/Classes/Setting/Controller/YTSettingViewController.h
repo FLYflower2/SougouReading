@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface YTSettingViewController : UIViewController
+#import "ZFBaseSettingViewController.h"
+@interface YTSettingViewController : ZFBaseSettingViewController
 
 @end

@@ -20,6 +20,11 @@
 		0479C47D1D025A5800C99F84 /* YTsearchKeyWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C47C1D025A5800C99F84 /* YTsearchKeyWords.m */; };
 		0479C49D1D0282EA00C99F84 /* YTkeywordsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C49C1D0282EA00C99F84 /* YTkeywordsRequest.m */; };
 		0479C4A01D02C62D00C99F84 /* YTNavAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C49F1D02C62D00C99F84 /* YTNavAnimation.m */; };
+		047B2C6C1D0B8F8800EC059D /* YTDetailNobkeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B2C6B1D0B8F8800EC059D /* YTDetailNobkeyViewController.m */; };
+		047B2C6F1D0BF9BB00EC059D /* YTBookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B2C6E1D0BF9BB00EC059D /* YTBookItem.m */; };
+		047B2C721D0BFB3800EC059D /* YTBookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B2C711D0BFB3800EC059D /* YTBookCollectionViewCell.m */; };
+		047B2C751D0C6A1A00EC059D /* YTSqliteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B2C741D0C6A1A00EC059D /* YTSqliteTool.m */; };
+		047B2C771D0C6AA400EC059D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 047B2C761D0C6AA400EC059D /* libsqlite3.0.tbd */; };
 		048C6B4D1D02E7B000ED670F /* YTparamLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C6B4C1D02E7B000ED670F /* YTparamLoop.m */; };
 		048C6B501D02EC2A00ED670F /* YTsearchResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C6B4F1D02EC2A00ED670F /* YTsearchResultItem.m */; };
 		048C6B531D02F58100ED670F /* YTResultCellWithbkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C6B521D02F58100ED670F /* YTResultCellWithbkey.m */; };
@@ -43,15 +48,13 @@
 		04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C823401D00045B0020A25B /* YTDiscoverViewController.m */; };
 		04CD80351D0A4B9500D839F8 /* YTLeftslideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80341D0A4B9500D839F8 /* YTLeftslideViewController.m */; };
 		04CD803D1D0AA9ED00D839F8 /* YTLeftslideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD803C1D0AA9ED00D839F8 /* YTLeftslideCell.m */; };
-		04CD80401D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD803F1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m */; };
-		04CD80421D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD80411D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib */; };
-		04CD80451D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80441D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m */; };
-		04CD80471D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD80461D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib */; };
 		04CD80541D0AD9AD00D839F8 /* ZFBaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD804B1D0AD9AD00D839F8 /* ZFBaseSettingViewController.m */; };
 		04CD80551D0AD9AD00D839F8 /* ZFSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD804E1D0AD9AD00D839F8 /* ZFSettingGroup.m */; };
 		04CD80561D0AD9AD00D839F8 /* ZFSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80501D0AD9AD00D839F8 /* ZFSettingItem.m */; };
 		04CD80571D0AD9AD00D839F8 /* ZFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80531D0AD9AD00D839F8 /* ZFSettingCell.m */; };
 		04CD805E1D0ADA6D00D839F8 /* YTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD805D1D0ADA6D00D839F8 /* YTSettingViewController.m */; };
+		04CD80611D0AEA6400D839F8 /* YTSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80601D0AEA6400D839F8 /* YTSetViewController.m */; };
+		04CD80681D0AF99800D839F8 /* YTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD80671D0AF99800D839F8 /* YTDetailViewController.m */; };
 		BCF158A85E79B8D1355D2291 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5189E56C9AFCA79FDB95E690 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +101,15 @@
 		0479C49C1D0282EA00C99F84 /* YTkeywordsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTkeywordsRequest.m; sourceTree = "<group>"; };
 		0479C49E1D02C62D00C99F84 /* YTNavAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavAnimation.h; sourceTree = "<group>"; };
 		0479C49F1D02C62D00C99F84 /* YTNavAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavAnimation.m; sourceTree = "<group>"; };
+		047B2C6A1D0B8F8800EC059D /* YTDetailNobkeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDetailNobkeyViewController.h; sourceTree = "<group>"; };
+		047B2C6B1D0B8F8800EC059D /* YTDetailNobkeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTDetailNobkeyViewController.m; sourceTree = "<group>"; };
+		047B2C6D1D0BF9BB00EC059D /* YTBookItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTBookItem.h; sourceTree = "<group>"; };
+		047B2C6E1D0BF9BB00EC059D /* YTBookItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBookItem.m; sourceTree = "<group>"; };
+		047B2C701D0BFB3800EC059D /* YTBookCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTBookCollectionViewCell.h; sourceTree = "<group>"; };
+		047B2C711D0BFB3800EC059D /* YTBookCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBookCollectionViewCell.m; sourceTree = "<group>"; };
+		047B2C731D0C6A1A00EC059D /* YTSqliteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSqliteTool.h; sourceTree = "<group>"; };
+		047B2C741D0C6A1A00EC059D /* YTSqliteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSqliteTool.m; sourceTree = "<group>"; };
+		047B2C761D0C6AA400EC059D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		048C6B4B1D02E7B000ED670F /* YTparamLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTparamLoop.h; sourceTree = "<group>"; };
 		048C6B4C1D02E7B000ED670F /* YTparamLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTparamLoop.m; sourceTree = "<group>"; };
 		048C6B4E1D02EC2A00ED670F /* YTsearchResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTsearchResultItem.h; sourceTree = "<group>"; };
@@ -144,12 +156,6 @@
 		04CD80341D0A4B9500D839F8 /* YTLeftslideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YTLeftslideViewController.m; path = ../../Search/Controller/YTLeftslideViewController.m; sourceTree = "<group>"; };
 		04CD803B1D0AA9ED00D839F8 /* YTLeftslideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLeftslideCell.h; sourceTree = "<group>"; };
 		04CD803C1D0AA9ED00D839F8 /* YTLeftslideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLeftslideCell.m; sourceTree = "<group>"; };
-		04CD803E1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLeftslideSectionHeaderView.h; sourceTree = "<group>"; };
-		04CD803F1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLeftslideSectionHeaderView.m; sourceTree = "<group>"; };
-		04CD80411D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTLeftslideSectionHeaderView.xib; sourceTree = "<group>"; };
-		04CD80431D0ABCF100D839F8 /* YTLeftslideSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLeftslideSectionFooterView.h; sourceTree = "<group>"; };
-		04CD80441D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLeftslideSectionFooterView.m; sourceTree = "<group>"; };
-		04CD80461D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTLeftslideSectionFooterView.xib; sourceTree = "<group>"; };
 		04CD804A1D0AD9AD00D839F8 /* ZFBaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBaseSettingViewController.h; sourceTree = "<group>"; };
 		04CD804B1D0AD9AD00D839F8 /* ZFBaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBaseSettingViewController.m; sourceTree = "<group>"; };
 		04CD804D1D0AD9AD00D839F8 /* ZFSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSettingGroup.h; sourceTree = "<group>"; };
@@ -160,6 +166,10 @@
 		04CD80531D0AD9AD00D839F8 /* ZFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSettingCell.m; sourceTree = "<group>"; };
 		04CD805C1D0ADA6D00D839F8 /* YTSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSettingViewController.h; sourceTree = "<group>"; };
 		04CD805D1D0ADA6D00D839F8 /* YTSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSettingViewController.m; sourceTree = "<group>"; };
+		04CD805F1D0AEA6400D839F8 /* YTSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSetViewController.h; sourceTree = "<group>"; };
+		04CD80601D0AEA6400D839F8 /* YTSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSetViewController.m; sourceTree = "<group>"; };
+		04CD80661D0AF99800D839F8 /* YTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDetailViewController.h; sourceTree = "<group>"; };
+		04CD80671D0AF99800D839F8 /* YTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTDetailViewController.m; sourceTree = "<group>"; };
 		228599889DB1968501D24444 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5189E56C9AFCA79FDB95E690 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8017FD661FBC52663178B312 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047B2C771D0C6AA400EC059D /* libsqlite3.0.tbd in Frameworks */,
 				BCF158A85E79B8D1355D2291 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +341,7 @@
 		04BEB9F91CFFF8FA00C272FC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04CD80621D0AF96C00D839F8 /* DetailContent */,
 				04CD80581D0ADA5000D839F8 /* Setting */,
 				04CD802F1D0A4B5000D839F8 /* Leftslide */,
 				048F7EA61D01CFA000DF692E /* Search */,
@@ -382,6 +394,8 @@
 		04BEBA0B1CFFF8FA00C272FC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				047B2C731D0C6A1A00EC059D /* YTSqliteTool.h */,
+				047B2C741D0C6A1A00EC059D /* YTSqliteTool.m */,
 				0479C3E41D0253A000C99F84 /* YTNetCommand.h */,
 				0479C3E51D0253A000C99F84 /* YTNetCommand.m */,
 				0479C49B1D0282EA00C99F84 /* YTkeywordsRequest.h */,
@@ -482,6 +496,8 @@
 		04C823371D00027E0020A25B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				047B2C6D1D0BF9BB00EC059D /* YTBookItem.h */,
+				047B2C6E1D0BF9BB00EC059D /* YTBookItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,6 +505,8 @@
 		04C823381D00027E0020A25B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				047B2C701D0BFB3800EC059D /* YTBookCollectionViewCell.h */,
+				047B2C711D0BFB3800EC059D /* YTBookCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,12 +542,6 @@
 			children = (
 				04CD803B1D0AA9ED00D839F8 /* YTLeftslideCell.h */,
 				04CD803C1D0AA9ED00D839F8 /* YTLeftslideCell.m */,
-				04CD803E1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.h */,
-				04CD803F1D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m */,
-				04CD80411D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib */,
-				04CD80431D0ABCF100D839F8 /* YTLeftslideSectionFooterView.h */,
-				04CD80441D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m */,
-				04CD80461D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -588,6 +600,8 @@
 			children = (
 				04CD805C1D0ADA6D00D839F8 /* YTSettingViewController.h */,
 				04CD805D1D0ADA6D00D839F8 /* YTSettingViewController.m */,
+				04CD805F1D0AEA6400D839F8 /* YTSetViewController.h */,
+				04CD80601D0AEA6400D839F8 /* YTSetViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -606,9 +620,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04CD80621D0AF96C00D839F8 /* DetailContent */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80631D0AF96C00D839F8 /* Controller */,
+				04CD80641D0AF96C00D839F8 /* Model */,
+				04CD80651D0AF96C00D839F8 /* View */,
+			);
+			path = DetailContent;
+			sourceTree = "<group>";
+		};
+		04CD80631D0AF96C00D839F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CD80661D0AF99800D839F8 /* YTDetailViewController.h */,
+				04CD80671D0AF99800D839F8 /* YTDetailViewController.m */,
+				047B2C6A1D0B8F8800EC059D /* YTDetailNobkeyViewController.h */,
+				047B2C6B1D0B8F8800EC059D /* YTDetailNobkeyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CD80641D0AF96C00D839F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CD80651D0AF96C00D839F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1F1C82B45CE1AB2D2B95FD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				047B2C761D0C6AA400EC059D /* libsqlite3.0.tbd */,
 				5189E56C9AFCA79FDB95E690 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -733,10 +783,8 @@
 			files = (
 				046AAF351D0323FF00E0ED80 /* YTResultCellNobkey.xib in Resources */,
 				048C6B551D02F7B900ED670F /* YTResultCellWithbkey.xib in Resources */,
-				04CD80421D0AB3AE00D839F8 /* YTLeftslideSectionHeaderView.xib in Resources */,
 				04BEB9D61CFFF4ED00C272FC /* LaunchScreen.storyboard in Resources */,
 				04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */,
-				04CD80471D0ABD0300D839F8 /* YTLeftslideSectionFooterView.xib in Resources */,
 				04BEB9D11CFFF4ED00C272FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,33 +858,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CD80451D0ABCF100D839F8 /* YTLeftslideSectionFooterView.m in Sources */,
+				04CD80611D0AEA6400D839F8 /* YTSetViewController.m in Sources */,
 				04CD80571D0AD9AD00D839F8 /* ZFSettingCell.m in Sources */,
 				048C6B4D1D02E7B000ED670F /* YTparamLoop.m in Sources */,
+				047B2C6C1D0B8F8800EC059D /* YTDetailNobkeyViewController.m in Sources */,
 				04C8233B1D0002A60020A25B /* BookshelfViewController.m in Sources */,
 				04CD803D1D0AA9ED00D839F8 /* YTLeftslideCell.m in Sources */,
 				048C6B531D02F58100ED670F /* YTResultCellWithbkey.m in Sources */,
 				048F7EB51D01D1CA00DF692E /* YTSearchFooter.m in Sources */,
+				047B2C721D0BFB3800EC059D /* YTBookCollectionViewCell.m in Sources */,
 				0479C47D1D025A5800C99F84 /* YTsearchKeyWords.m in Sources */,
 				04BEBA0C1CFFF8FA00C272FC /* AppDelegate.m in Sources */,
 				04110B541D053CB00062AA61 /* YTsearchAllResult.m in Sources */,
 				04C30DD21D03F89700A123F5 /* YTSectionHeaderView.m in Sources */,
 				04C30DD51D0400D400A123F5 /* YTresultGroup.m in Sources */,
 				04CD80551D0AD9AD00D839F8 /* ZFSettingGroup.m in Sources */,
+				047B2C6F1D0BF9BB00EC059D /* YTBookItem.m in Sources */,
 				048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */,
 				046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */,
 				040C7B091D09C89400D11610 /* LeftSlideViewController.m in Sources */,
 				047099C81D00405A0066978B /* YTNavController.m in Sources */,
 				04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */,
+				04CD80681D0AF99800D839F8 /* YTDetailViewController.m in Sources */,
 				04CD80541D0AD9AD00D839F8 /* ZFBaseSettingViewController.m in Sources */,
 				048F7E7F1D01ADF100DF692E /* UIBarButtonItem+Extension.m in Sources */,
 				040C7B0A1D09C89400D11610 /* UIView_extra.m in Sources */,
-				04CD80401D0AB22400D839F8 /* YTLeftslideSectionHeaderView.m in Sources */,
 				04CD805E1D0ADA6D00D839F8 /* YTSettingViewController.m in Sources */,
 				0479C4A01D02C62D00C99F84 /* YTNavAnimation.m in Sources */,
 				0400AD6B1D058B5500CAE3F1 /* XTPopView.m in Sources */,
 				040870DB1D03F52A00DCB910 /* YTRotateRefreshIcon.m in Sources */,
 				048F7EB11D01CFA000DF692E /* YTSearchViewController.m in Sources */,
+				047B2C751D0C6A1A00EC059D /* YTSqliteTool.m in Sources */,
 				04CD80561D0AD9AD00D839F8 /* ZFSettingItem.m in Sources */,
 				04BEBA0F1CFFF94400C272FC /* YTTabBarController.m in Sources */,
 				04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */,

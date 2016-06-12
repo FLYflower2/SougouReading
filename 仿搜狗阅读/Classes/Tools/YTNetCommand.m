@@ -56,6 +56,19 @@
     
 }
 
++ (void)downloadAndStoredImage:(NSString *)imgUrlStr imageKey:(NSString *)imageKey{
+    UIImageView *imgView = [[UIImageView alloc]init];
+    [imgView sd_setImageWithURL:[NSURL URLWithString:imgUrlStr] placeholderImage:nil
+                        options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        //进度
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        [[SDImageCache sharedImageCache]storeImage:imgView.image forKey:imageKey];
+        NSLog(@"图片存储成功");
+    }];
+
+}
+
+
 + (NSArray *)netRequestReturnArray:(NSString *)urlStr param:(NSDictionary *)param valueKey:(NSString *)valueKey{
    __block NSArray *array = [NSArray array];
     

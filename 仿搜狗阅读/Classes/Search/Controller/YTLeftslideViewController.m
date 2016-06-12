@@ -8,9 +8,12 @@
 
 #import "YTLeftslideViewController.h"
 #import "YTLeftslideCell.h"
-#import "YTLeftslideSectionHeaderView.h"
-#import "YTLeftslideSectionFooterView.h"
+#import "YTSearchViewController.h"
 @interface YTLeftslideViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+- (IBAction)SettingBtnClick:(id)sender;
 
 @end
 
@@ -18,16 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.headerView.backgroundColor = [UIColor clearColor];
+    self.footerView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
 
-    self.tableView.bounces = NO;
-    [self setupBackgroundImage];
+
     
 }
 
-- (void)setupBackgroundImage{
-    UIImageView *imageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"personalCenterBg"]];
-    [self.tableView setBackgroundView:imageView];
-}
+
 
 #pragma mark - Table view data source
 
@@ -42,31 +45,7 @@
     return 6;
 }
 
-#pragma mark -header样式
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    // create the parent view that will hold header Label
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 , YTScreenWidth, 150)];
 
-    [YTLeftslideSectionHeaderView addHeaderToView:customView];
-    
-    return customView;
-}
-#pragma mark -footer样式
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 , YTScreenWidth, 115)];
-    [YTLeftslideSectionFooterView addFooterToView:customView];
-    
-    return customView;
-}
-#pragma mark - header高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 150;
-}
-
-#pragma mark - footr高度
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 115;
-}
 #pragma mark - cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
@@ -122,4 +101,14 @@
     return cell;
 }
 
+
+- (IBAction)SettingBtnClick:(id)sender {
+    
+    NSLog(@"left");
+    [YTNavAnimation NavPushAnimation:self.navigationController.view];
+    YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
+    [[self navigationController]pushViewController:searchVC animated:NO];
+    
+    
+}
 @end

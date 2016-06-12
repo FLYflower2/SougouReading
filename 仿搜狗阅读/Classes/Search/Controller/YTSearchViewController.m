@@ -22,6 +22,8 @@
 #import "YTresultGroup.h"
 #import "YTRotateRefreshIcon.h"
 #import "YTsearchAllResult.h"
+#import "YTDetailViewController.h"
+#import "YTDetailNobkeyViewController.h"
 //#import "YTkeywordsRequest.h"
 @interface YTSearchViewController ()
 {
@@ -67,6 +69,9 @@
     [self setupNavBar];
     [self setupFooter];
     [self setupTableView];
+    
+    
+
 
     
 }
@@ -104,6 +109,32 @@
 
 }
 
+#pragma mark -  点击cell
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    YTDetailViewController *DetailVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"DetailVC"];
+    YTDetailNobkeyViewController *DetailNobkeyVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"DetailNobkeyVC"];
+
+    
+    if (indexPath.section == 0) {
+        YTresultGroup *groupWithbkey = _resultArr[0];
+        YTsearchResultItem *searchResultItem = groupWithbkey.resultsArr[indexPath.row];
+        DetailVC.bkey = searchResultItem.bkey;
+        DetailVC.bookName = searchResultItem.book;
+        DetailVC.imageUrlStr = searchResultItem.picurl;
+        
+        [self.navigationController pushViewController:DetailVC animated:YES];
+    }else{
+        YTresultGroup *groupNobkey = _resultArr[1];
+        YTsearchResultItem *searchResultItem = groupNobkey.resultsArr[indexPath.row];
+        DetailNobkeyVC.md = searchResultItem.md;
+        DetailNobkeyVC.bookName = searchResultItem.book;
+        DetailNobkeyVC.imageUrlStr = searchResultItem.picurl;
+            
+        [self.navigationController pushViewController:DetailNobkeyVC animated:YES];
+    }
+
+}
+
 #pragma mark -header样式
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     // create the parent view that will hold header Label
@@ -138,6 +169,11 @@
 
 #pragma mark - 设置导航栏 以及搜索点击回调
 - (void)setupNavBar {
+    //跳转到下一界面的返回按钮样式
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"";
+    self.navigationItem.backBarButtonItem = backItem;
+    
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithTitle:@"取消"

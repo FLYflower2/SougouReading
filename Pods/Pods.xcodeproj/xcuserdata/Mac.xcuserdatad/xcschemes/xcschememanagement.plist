@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JVFloatingDrawer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,11 +57,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1EC0DA9332B7491C8F6778E4C6C4A90A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>28EDA0AC3272A77B0575F728B99261BC</key>
 		<dict>
 			<key>primary</key>
@@ -72,6 +72,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6A9B4F02C59A34FF4DDDEA09524C5E90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DF20D724EC35353E2738EDFDD2643EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
@@ -82,17 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B04ADA4E92E457EBEE7A8C4EEE26B345</key>
+		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFC47E19C47F8E6C5CB9FFC5EC300FCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B3C760711B585710870482548EF04B3F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C9E97D96846ABB7C8F33F8E7C212083C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -16,6 +16,10 @@
 #import "UIBarButtonItem+Extension.h"
 #import "YTNavAnimation.h"
 #import "LBProgressHUD.h"
+#import "YTNetCommand.h"
+#import <FMDB.h>
+#import "YTSqliteTool.h"
+
 
 
 #define YTUserDefaults [NSUserDefaults standardUserDefaults]
@@ -24,6 +28,8 @@
 #define YTScreenHeight [UIScreen mainScreen].bounds.size.height
 #define keyWordsUrl @"http://wap.sogou.com/book/sgapp_ranking_u.jsp"
 #define searchUrl @"http://api.apt.k.sogou.com/apt/app/search"
+#define detailUrl @"http://k.sogou.com/abs/ios/v3/detail"
+
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
 /**

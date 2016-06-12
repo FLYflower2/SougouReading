@@ -22,6 +22,9 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - JVFloatingDrawer (0.1.0)
   - Masonry (1.0.1)
   - MJExtension (3.0.10)
@@ -34,6 +37,7 @@ PODS:
     - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
+  - FMDB
   - JVFloatingDrawer
   - Masonry
   - MJExtension
@@ -44,6 +48,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548

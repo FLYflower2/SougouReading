@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YTLeftslideViewController : UITableViewController
+@interface YTLeftslideViewController : UIViewController
 
 @end

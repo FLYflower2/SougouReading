@@ -19,4 +19,8 @@
 + (NSArray *)netRequestReturnArray:(NSString *)urlStr param:(NSDictionary *)param valueKey:(NSString *)valueKey;
 
 
+//下载图片到缓存
++ (void)downloadAndStoredImage:(NSString *)imgUrlStr imageKey:(NSString *)imageKey;
+
+
 @end
