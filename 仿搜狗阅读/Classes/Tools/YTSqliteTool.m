@@ -64,12 +64,31 @@ static sqlite3 *_db;
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             
             int ID = sqlite3_column_int(stmt, 0);
+            
+            
             // 有数据
             NSString *name = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 1)];
             
             NSString *imageKey = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 2)];
             
-            YTBookItem *bookItem = [YTBookItem BookItemWithName:name imageKey:imageKey];
+            NSString *bookid = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 3)];
+            
+            NSString *md = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 4)];
+            
+            NSString *count = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 5)];
+            
+            NSString *author = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 6)];
+            
+            NSString *loc = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 7)];
+            
+            NSString *eid = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 8)];
+            
+            NSString *bkey = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 9)];
+            
+            NSString *token = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 10)];
+
+            
+            YTBookItem *bookItem = [YTBookItem BookItemWithName:name imageKey:imageKey bookid:bookid md:md count:count author:author loc:loc eid:eid bkey:bkey token:token];
     
 
             [arrM addObject:bookItem];

@@ -7,8 +7,9 @@
 //
 
 #import "YTDetailViewController.h"
-
-@interface YTDetailViewController ()
+#import "YTChaptersItem.h"
+#import <MJExtension.h>
+@interface YTDetailViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *detailWebView;
 - (IBAction)attemptReadingForFree:(id)sender;
 - (IBAction)addToShelf:(id)sender;
@@ -24,7 +25,7 @@
     self.navigationItem.title = self.bookName;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.detailWebView.scrollView.bounces = NO;
-    
+    self.detailWebView.delegate = self;
     
     [self detailWebViewRequest];
     
@@ -67,16 +68,45 @@
 - (IBAction)addToShelf:(id)sender {
     
     [YTNetCommand downloadAndStoredImage:self.imageUrlStr imageKey:self.bookName];
+  
     //存图片的key就是用书名，所以sql的两个参数都是bookName
-    NSString *sql = [NSString stringWithFormat:@"insert into t_bookshelf (book,imagekey) values('%@','%@');",self.bookName,self.bookName];
+    NSString *sql = [NSString stringWithFormat:@"insert into t_bookshelf (book,imagekey,bookid,md,count,author,loc,eid,bkey,token) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@');",self.bookName,self.bookName,self.bookid,self.md,self.count,self.author,self.loc,self.eid,self.bkey,self.token];
     [YTSqliteTool execWithSql:sql];
     
+    
+
 
 }
 
 - (IBAction)buying:(id)sender {
 }
-
-
-
+#pragma mark - 根据章节对象建立数据表，每本书一个数据表
+- (void)setupChapterTable:(NSString *)bookname{
+    
+    NSString *sql = [NSString stringWithFormat:@"create table if not exists t_%@chapters (id integer primary key autoincrement,free text,gl text,buy text,rmb text,name text,md5 text);",self.bookName];
+    
+    [YTSqliteTool execWithSql:sql];
+    
+}
+//因为一些情况，暂时网络请求不到，所以先放着不用,原因是返回的数据不是标准json格式
+- (void)requestChapters{
+    NSDictionary *param = @{@"bkey":self.bkey,
+                            @"v":@"0",
+                            @"uid":@"80C5B623E2F3031DC4B1874096C54217@qq.sohu.com",
+                            @"token":@"4244558c08b4ee4e9791b06cca4ec139",
+                            @"eid":@"1136"
+                            };
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET :menuUrl
+       parameters:param
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              // NSArray *tempArr = [YTChaptersItem mj_objectArrayWithKeyValuesArray:[responseObject valueForKey:@"chapter"]];
+              //  NSLog(@"%d",tempArr.count);
+              NSLog(@"success");
+          }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"%@",error);
+              NSLog(@"faild");
+          }];
+}
 @end

@@ -103,10 +103,46 @@ static NSString * const reuseIdentifier = @"Cell";
     //如果点击最后一项，就跳转到书城界面
     if (indexPath.row == booksArr.count -1 ) {
          self.tabBarController.selectedIndex = 1;
+    }else{
+        NSLog(@"请求txt");
+        
+        NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        
+//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//        [manager GET:@"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=7AD6A96E5F170B19DD4EF908875969EB&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//            NSLog(@"success");
+//            NSLog(@"%@",responseObject);
+//        } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+//            NSLog(@"%@",error);
+//        }];
+        
+        // 1. url
+        NSString *urlStr = @"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=7AD6A96E5F170B19DD4EF908875969EB&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136";
+        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURL *url = [NSURL URLWithString:urlStr];
+        
+        // 2. 下载
+        [[[NSURLSession sharedSession] downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+            
+          //  NSLog(@"文件的路径%@", location.path);
+            
+            NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+         //   NSLog(@"%@", cacheDir);
+            /**
+             FileAtPath：要解压缩的文件
+             Destination: 要解压缩到的路径
+             */
+            [SSZipArchive unzipFileAtPath:location.path toDestination:cacheDir];
+            
+        }] resume];
+
+        
     }
-                                              
-                                              
+                                            
 }
+
+
 
 
 - (IBAction)searchBtnClick:(id)sender {
@@ -181,7 +217,9 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 - (void)setupDataBase{
     //    //创建表
-    NSString *sql = @"create table if not exists t_bookshelf (id integer primary key autoincrement,book text,imagekey text);";
+    
+    
+    NSString *sql = @"create table if not exists t_bookshelf (id integer primary key autoincrement,book text,imagekey text,bookid text,md text,count text,author text,loc text,eid text,bkey text,token text);";
     [YTSqliteTool execWithSql:sql];
     
 }

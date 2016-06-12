@@ -68,6 +68,28 @@
 
 }
 
++ (void)downloadTxtfileWithUrl:(NSString *)urlStr{
+    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    [[[NSURLSession sharedSession] downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        
+    //    NSLog(@"文件的路径%@", location.path);
+        
+        NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    //    NSLog(@"%@", cacheDir);
+        /**
+         FileAtPath：要解压缩的文件
+         Destination: 要解压缩到的路径
+         */
+        [SSZipArchive unzipFileAtPath:location.path toDestination:cacheDir];
+        
+    }] resume];
+
+
+}
+
 
 + (NSArray *)netRequestReturnArray:(NSString *)urlStr param:(NSDictionary *)param valueKey:(NSString *)valueKey{
    __block NSArray *array = [NSArray array];
@@ -86,6 +108,7 @@
     NSLog(@"rr %@",array);
     return  array;
 }
+
 
 
 @end

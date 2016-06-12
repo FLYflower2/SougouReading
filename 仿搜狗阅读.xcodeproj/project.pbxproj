@@ -33,6 +33,10 @@
 		048F7EB11D01CFA000DF692E /* YTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F7EAB1D01CFA000DF692E /* YTSearchViewController.m */; };
 		048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F7EAF1D01CFA000DF692E /* YTSearchBar.m */; };
 		048F7EB51D01D1CA00DF692E /* YTSearchFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F7EB41D01D1CA00DF692E /* YTSearchFooter.m */; };
+		04B7C0741D0D3DE9002286FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B7C0731D0D3DE9002286FC /* SystemConfiguration.framework */; };
+		04B7C0761D0D3DF2002286FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B7C0751D0D3DF2002286FC /* MobileCoreServices.framework */; };
+		04B7C0781D0D4BAD002286FC /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B7C0771D0D4BAD002286FC /* libz.1.2.5.tbd */; };
+		04B7C07B1D0D8787002286FC /* YTChaptersItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7C07A1D0D8787002286FC /* YTChaptersItem.m */; };
 		04BEB9C81CFFF4ED00C272FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB9C71CFFF4ED00C272FC /* main.m */; };
 		04BEB9D11CFFF4ED00C272FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BEB9CF1CFFF4ED00C272FC /* Main.storyboard */; };
 		04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BEB9D21CFFF4ED00C272FC /* Assets.xcassets */; };
@@ -126,6 +130,11 @@
 		048F7EAF1D01CFA000DF692E /* YTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchBar.m; sourceTree = "<group>"; };
 		048F7EB31D01D1CA00DF692E /* YTSearchFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSearchFooter.h; sourceTree = "<group>"; };
 		048F7EB41D01D1CA00DF692E /* YTSearchFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchFooter.m; sourceTree = "<group>"; };
+		04B7C0731D0D3DE9002286FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		04B7C0751D0D3DF2002286FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		04B7C0771D0D4BAD002286FC /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		04B7C0791D0D8787002286FC /* YTChaptersItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTChaptersItem.h; sourceTree = "<group>"; };
+		04B7C07A1D0D8787002286FC /* YTChaptersItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTChaptersItem.m; sourceTree = "<group>"; };
 		04BEB9C31CFFF4EC00C272FC /* 仿搜狗阅读.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "仿搜狗阅读.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BEB9C71CFFF4ED00C272FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04BEB9D01CFFF4ED00C272FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +189,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B7C0781D0D4BAD002286FC /* libz.1.2.5.tbd in Frameworks */,
+				04B7C0761D0D3DF2002286FC /* MobileCoreServices.framework in Frameworks */,
+				04B7C0741D0D3DE9002286FC /* SystemConfiguration.framework in Frameworks */,
 				047B2C771D0C6AA400EC059D /* libsqlite3.0.tbd in Frameworks */,
 				BCF158A85E79B8D1355D2291 /* libPods.a in Frameworks */,
 			);
@@ -644,6 +656,8 @@
 		04CD80641D0AF96C00D839F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04B7C0791D0D8787002286FC /* YTChaptersItem.h */,
+				04B7C07A1D0D8787002286FC /* YTChaptersItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -658,6 +672,9 @@
 		1F1C82B45CE1AB2D2B95FD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04B7C0771D0D4BAD002286FC /* libz.1.2.5.tbd */,
+				04B7C0751D0D3DF2002286FC /* MobileCoreServices.framework */,
+				04B7C0731D0D3DE9002286FC /* SystemConfiguration.framework */,
 				047B2C761D0C6AA400EC059D /* libsqlite3.0.tbd */,
 				5189E56C9AFCA79FDB95E690 /* libPods.a */,
 			);
@@ -873,6 +890,7 @@
 				04C30DD21D03F89700A123F5 /* YTSectionHeaderView.m in Sources */,
 				04C30DD51D0400D400A123F5 /* YTresultGroup.m in Sources */,
 				04CD80551D0AD9AD00D839F8 /* ZFSettingGroup.m in Sources */,
+				04B7C07B1D0D8787002286FC /* YTChaptersItem.m in Sources */,
 				047B2C6F1D0BF9BB00EC059D /* YTBookItem.m in Sources */,
 				048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */,
 				046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */,

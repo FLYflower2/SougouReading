@@ -121,7 +121,11 @@
         DetailVC.bkey = searchResultItem.bkey;
         DetailVC.bookName = searchResultItem.book;
         DetailVC.imageUrlStr = searchResultItem.picurl;
-        
+        DetailVC.bookid = searchResultItem.id;
+      //  DetailVC.md = searchResultItem.md;   //有bkey的实际上没id
+        DetailVC.loc = searchResultItem.loc;
+        DetailVC.author = searchResultItem.author;
+ 
         [self.navigationController pushViewController:DetailVC animated:YES];
     }else{
         YTresultGroup *groupNobkey = _resultArr[1];
@@ -129,7 +133,11 @@
         DetailNobkeyVC.md = searchResultItem.md;
         DetailNobkeyVC.bookName = searchResultItem.book;
         DetailNobkeyVC.imageUrlStr = searchResultItem.picurl;
-            
+        DetailNobkeyVC.bookid = searchResultItem.id;
+        DetailNobkeyVC.md = searchResultItem.md;
+        DetailNobkeyVC.loc = searchResultItem.loc;
+        DetailNobkeyVC.author =searchResultItem.author;
+     
         [self.navigationController pushViewController:DetailNobkeyVC animated:YES];
     }
 

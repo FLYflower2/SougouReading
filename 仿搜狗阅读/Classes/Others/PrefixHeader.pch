@@ -19,7 +19,11 @@
 #import "YTNetCommand.h"
 #import <FMDB.h>
 #import "YTSqliteTool.h"
+#import <AFNetworking.h>
+#import <SSZipArchive.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
+#import <SystemConfiguration/SystemConfiguration.h>
 
 
 #define YTUserDefaults [NSUserDefaults standardUserDefaults]
@@ -29,8 +33,8 @@
 #define keyWordsUrl @"http://wap.sogou.com/book/sgapp_ranking_u.jsp"
 #define searchUrl @"http://api.apt.k.sogou.com/apt/app/search"
 #define detailUrl @"http://k.sogou.com/abs/ios/v3/detail"
-
-
+#define menuUrl @"http://k.sogou.com/s/api/ios/b/m"
+#define menuNobkeyUrl @"http://api.apt.k.sogou.com/apt/app/menu"
 #define WeakSelf __weak typeof(self) weakSelf = self;
 /**
  *  1.返回一个RGBA格式的UIColor对象
