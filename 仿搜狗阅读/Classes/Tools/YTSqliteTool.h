@@ -12,4 +12,7 @@
 // 插入。删除，修改
 + (void)execWithSql:(NSString *)sql;
 + (NSMutableArray *)selectWithSql:(NSString *)sql;
+
++ (NSMutableArray *)selectChaptersWithSql:(NSString *)sql;
+
 @end

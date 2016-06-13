@@ -13,8 +13,22 @@
 		040C7B0A1D09C89400D11610 /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 040C7B081D09C89400D11610 /* UIView_extra.m */; };
 		04110B541D053CB00062AA61 /* YTsearchAllResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 04110B531D053CB00062AA61 /* YTsearchAllResult.m */; };
 		04110B571D054A2B0062AA61 /* LBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 04110B561D054A2B0062AA61 /* LBProgressHUD.m */; };
+		0412480F1D0EE3A700366240 /* NSString+PCPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 041247FE1D0EE3A700366240 /* NSString+PCPaging.m */; };
+		041248101D0EE3A700366240 /* PCCollectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248001D0EE3A700366240 /* PCCollectViewModel.m */; };
+		041248111D0EE3A700366240 /* PCDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248021D0EE3A700366240 /* PCDataViewController.m */; };
+		041248121D0EE3A700366240 /* PCGlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248041D0EE3A700366240 /* PCGlobalModel.m */; };
+		041248131D0EE3A700366240 /* PCModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248061D0EE3A700366240 /* PCModelViewController.m */; };
+		041248141D0EE3A700366240 /* PCPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248081D0EE3A700366240 /* PCPageCell.m */; };
+		041248151D0EE3A700366240 /* PCPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412480A1D0EE3A700366240 /* PCPageView.m */; };
+		041248161D0EE3A700366240 /* PCReaderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412480C1D0EE3A700366240 /* PCReaderTool.m */; };
+		041248171D0EE3A700366240 /* PCReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412480E1D0EE3A700366240 /* PCReaderViewController.m */; };
+		0412481B1D0EE56400366240 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0412481A1D0EE56400366240 /* test.txt */; };
+		041248221D0EE99E00366240 /* YTNovelContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248211D0EE99E00366240 /* YTNovelContentController.m */; };
 		046AAF351D0323FF00E0ED80 /* YTResultCellNobkey.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046AAF341D0323FF00E0ED80 /* YTResultCellNobkey.xib */; };
 		046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AAF3A1D03296900E0ED80 /* YTResultCellNobkey.m */; };
+		046DA83A1D0E8BC90073D0FA /* MBProgressHUD+YT.m in Sources */ = {isa = PBXBuildFile; fileRef = 046DA8391D0E8BC90073D0FA /* MBProgressHUD+YT.m */; };
+		046DA83C1D0EBD6D0073D0FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046DA83B1D0EBD6D0073D0FA /* CoreGraphics.framework */; };
+		046DA83E1D0EBD7D0073D0FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046DA83D1D0EBD7D0073D0FA /* QuartzCore.framework */; };
 		047099C81D00405A0066978B /* YTNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047099C71D00405A0066978B /* YTNavController.m */; };
 		0479C3E61D0253A000C99F84 /* YTNetCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C3E51D0253A000C99F84 /* YTNetCommand.m */; };
 		0479C47D1D025A5800C99F84 /* YTsearchKeyWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C47C1D025A5800C99F84 /* YTsearchKeyWords.m */; };
@@ -33,6 +47,7 @@
 		048F7EB11D01CFA000DF692E /* YTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F7EAB1D01CFA000DF692E /* YTSearchViewController.m */; };
 		048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F7EAF1D01CFA000DF692E /* YTSearchBar.m */; };
 		048F7EB51D01D1CA00DF692E /* YTSearchFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F7EB41D01D1CA00DF692E /* YTSearchFooter.m */; };
+		04A8FC771D0E5014001BC55C /* YTRegularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8FC761D0E5014001BC55C /* YTRegularExpression.m */; };
 		04B7C0741D0D3DE9002286FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B7C0731D0D3DE9002286FC /* SystemConfiguration.framework */; };
 		04B7C0761D0D3DF2002286FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B7C0751D0D3DF2002286FC /* MobileCoreServices.framework */; };
 		04B7C0781D0D4BAD002286FC /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B7C0771D0D4BAD002286FC /* libz.1.2.5.tbd */; };
@@ -92,9 +107,34 @@
 		04110B531D053CB00062AA61 /* YTsearchAllResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTsearchAllResult.m; sourceTree = "<group>"; };
 		04110B551D054A2B0062AA61 /* LBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressHUD.h; sourceTree = "<group>"; };
 		04110B561D054A2B0062AA61 /* LBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressHUD.m; sourceTree = "<group>"; };
+		041247FD1D0EE3A700366240 /* NSString+PCPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PCPaging.h"; sourceTree = "<group>"; };
+		041247FE1D0EE3A700366240 /* NSString+PCPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PCPaging.m"; sourceTree = "<group>"; };
+		041247FF1D0EE3A700366240 /* PCCollectViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCollectViewModel.h; sourceTree = "<group>"; };
+		041248001D0EE3A700366240 /* PCCollectViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCollectViewModel.m; sourceTree = "<group>"; };
+		041248011D0EE3A700366240 /* PCDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCDataViewController.h; sourceTree = "<group>"; };
+		041248021D0EE3A700366240 /* PCDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCDataViewController.m; sourceTree = "<group>"; };
+		041248031D0EE3A700366240 /* PCGlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCGlobalModel.h; sourceTree = "<group>"; };
+		041248041D0EE3A700366240 /* PCGlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCGlobalModel.m; sourceTree = "<group>"; };
+		041248051D0EE3A700366240 /* PCModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCModelViewController.h; sourceTree = "<group>"; };
+		041248061D0EE3A700366240 /* PCModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCModelViewController.m; sourceTree = "<group>"; };
+		041248071D0EE3A700366240 /* PCPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPageCell.h; sourceTree = "<group>"; };
+		041248081D0EE3A700366240 /* PCPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPageCell.m; sourceTree = "<group>"; };
+		041248091D0EE3A700366240 /* PCPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPageView.h; sourceTree = "<group>"; };
+		0412480A1D0EE3A700366240 /* PCPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPageView.m; sourceTree = "<group>"; };
+		0412480B1D0EE3A700366240 /* PCReaderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCReaderTool.h; sourceTree = "<group>"; };
+		0412480C1D0EE3A700366240 /* PCReaderTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCReaderTool.m; sourceTree = "<group>"; };
+		0412480D1D0EE3A700366240 /* PCReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCReaderViewController.h; sourceTree = "<group>"; };
+		0412480E1D0EE3A700366240 /* PCReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCReaderViewController.m; sourceTree = "<group>"; };
+		0412481A1D0EE56400366240 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		041248201D0EE99E00366240 /* YTNovelContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNovelContentController.h; sourceTree = "<group>"; };
+		041248211D0EE99E00366240 /* YTNovelContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNovelContentController.m; sourceTree = "<group>"; };
 		046AAF341D0323FF00E0ED80 /* YTResultCellNobkey.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTResultCellNobkey.xib; sourceTree = "<group>"; };
 		046AAF391D03296900E0ED80 /* YTResultCellNobkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTResultCellNobkey.h; sourceTree = "<group>"; };
 		046AAF3A1D03296900E0ED80 /* YTResultCellNobkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTResultCellNobkey.m; sourceTree = "<group>"; };
+		046DA8381D0E8BC90073D0FA /* MBProgressHUD+YT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+YT.h"; sourceTree = "<group>"; };
+		046DA8391D0E8BC90073D0FA /* MBProgressHUD+YT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+YT.m"; sourceTree = "<group>"; };
+		046DA83B1D0EBD6D0073D0FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		046DA83D1D0EBD7D0073D0FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		047099C61D00405A0066978B /* YTNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavController.h; sourceTree = "<group>"; };
 		047099C71D00405A0066978B /* YTNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavController.m; sourceTree = "<group>"; };
 		0479C3E41D0253A000C99F84 /* YTNetCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetCommand.h; sourceTree = "<group>"; };
@@ -130,6 +170,8 @@
 		048F7EAF1D01CFA000DF692E /* YTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchBar.m; sourceTree = "<group>"; };
 		048F7EB31D01D1CA00DF692E /* YTSearchFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSearchFooter.h; sourceTree = "<group>"; };
 		048F7EB41D01D1CA00DF692E /* YTSearchFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchFooter.m; sourceTree = "<group>"; };
+		04A8FC751D0E5014001BC55C /* YTRegularExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTRegularExpression.h; sourceTree = "<group>"; };
+		04A8FC761D0E5014001BC55C /* YTRegularExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTRegularExpression.m; sourceTree = "<group>"; };
 		04B7C0731D0D3DE9002286FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		04B7C0751D0D3DF2002286FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		04B7C0771D0D4BAD002286FC /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -189,6 +231,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046DA83E1D0EBD7D0073D0FA /* QuartzCore.framework in Frameworks */,
+				046DA83C1D0EBD6D0073D0FA /* CoreGraphics.framework in Frameworks */,
 				04B7C0781D0D4BAD002286FC /* libz.1.2.5.tbd in Frameworks */,
 				04B7C0761D0D3DF2002286FC /* MobileCoreServices.framework in Frameworks */,
 				04B7C0741D0D3DE9002286FC /* SystemConfiguration.framework in Frameworks */,
@@ -223,6 +267,64 @@
 				040C7B081D09C89400D11610 /* UIView_extra.m */,
 			);
 			path = LeftSlideViewController;
+			sourceTree = "<group>";
+		};
+		041247FC1D0EE3A700366240 /* reader */ = {
+			isa = PBXGroup;
+			children = (
+				041247FD1D0EE3A700366240 /* NSString+PCPaging.h */,
+				041247FE1D0EE3A700366240 /* NSString+PCPaging.m */,
+				041247FF1D0EE3A700366240 /* PCCollectViewModel.h */,
+				041248001D0EE3A700366240 /* PCCollectViewModel.m */,
+				041248011D0EE3A700366240 /* PCDataViewController.h */,
+				041248021D0EE3A700366240 /* PCDataViewController.m */,
+				041248031D0EE3A700366240 /* PCGlobalModel.h */,
+				041248041D0EE3A700366240 /* PCGlobalModel.m */,
+				041248051D0EE3A700366240 /* PCModelViewController.h */,
+				041248061D0EE3A700366240 /* PCModelViewController.m */,
+				041248071D0EE3A700366240 /* PCPageCell.h */,
+				041248081D0EE3A700366240 /* PCPageCell.m */,
+				041248091D0EE3A700366240 /* PCPageView.h */,
+				0412480A1D0EE3A700366240 /* PCPageView.m */,
+				0412480B1D0EE3A700366240 /* PCReaderTool.h */,
+				0412480C1D0EE3A700366240 /* PCReaderTool.m */,
+				0412480D1D0EE3A700366240 /* PCReaderViewController.h */,
+				0412480E1D0EE3A700366240 /* PCReaderViewController.m */,
+			);
+			path = reader;
+			sourceTree = "<group>";
+		};
+		0412481C1D0EE90400366240 /* NovelContent */ = {
+			isa = PBXGroup;
+			children = (
+				0412481D1D0EE90400366240 /* Controller */,
+				0412481E1D0EE90400366240 /* Model */,
+				0412481F1D0EE90400366240 /* View */,
+			);
+			path = NovelContent;
+			sourceTree = "<group>";
+		};
+		0412481D1D0EE90400366240 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				041248201D0EE99E00366240 /* YTNovelContentController.h */,
+				041248211D0EE99E00366240 /* YTNovelContentController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0412481E1D0EE90400366240 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0412481F1D0EE90400366240 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		048F7E7C1D01AD9C00DF692E /* Category */ = {
@@ -318,6 +420,7 @@
 				04BEB9CF1CFFF4ED00C272FC /* Main.storyboard */,
 				04BEB9D21CFFF4ED00C272FC /* Assets.xcassets */,
 				04BEB9D41CFFF4ED00C272FC /* LaunchScreen.storyboard */,
+				0412481A1D0EE56400366240 /* test.txt */,
 				04BEB9D71CFFF4ED00C272FC /* Info.plist */,
 				04BEB9C61CFFF4ED00C272FC /* Supporting Files */,
 			);
@@ -353,6 +456,7 @@
 		04BEB9F91CFFF8FA00C272FC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0412481C1D0EE90400366240 /* NovelContent */,
 				04CD80621D0AF96C00D839F8 /* DetailContent */,
 				04CD80581D0ADA5000D839F8 /* Setting */,
 				04CD802F1D0A4B5000D839F8 /* Leftslide */,
@@ -371,10 +475,13 @@
 		04BEB9FE1CFFF8FA00C272FC /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				041247FC1D0EE3A700366240 /* reader */,
 				04CD80481D0AD9AD00D839F8 /* ZFSetting */,
 				040C7B041D09C89400D11610 /* LeftSlideViewController */,
 				0400AD691D058B5500CAE3F1 /* XTPopView.h */,
 				0400AD6A1D058B5500CAE3F1 /* XTPopView.m */,
+				046DA8381D0E8BC90073D0FA /* MBProgressHUD+YT.h */,
+				046DA8391D0E8BC90073D0FA /* MBProgressHUD+YT.m */,
 				04110B551D054A2B0062AA61 /* LBProgressHUD.h */,
 				04110B561D054A2B0062AA61 /* LBProgressHUD.m */,
 			);
@@ -406,6 +513,8 @@
 		04BEBA0B1CFFF8FA00C272FC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04A8FC751D0E5014001BC55C /* YTRegularExpression.h */,
+				04A8FC761D0E5014001BC55C /* YTRegularExpression.m */,
 				047B2C731D0C6A1A00EC059D /* YTSqliteTool.h */,
 				047B2C741D0C6A1A00EC059D /* YTSqliteTool.m */,
 				0479C3E41D0253A000C99F84 /* YTNetCommand.h */,
@@ -672,6 +781,8 @@
 		1F1C82B45CE1AB2D2B95FD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				046DA83D1D0EBD7D0073D0FA /* QuartzCore.framework */,
+				046DA83B1D0EBD6D0073D0FA /* CoreGraphics.framework */,
 				04B7C0771D0D4BAD002286FC /* libz.1.2.5.tbd */,
 				04B7C0751D0D3DF2002286FC /* MobileCoreServices.framework */,
 				04B7C0731D0D3DE9002286FC /* SystemConfiguration.framework */,
@@ -802,6 +913,7 @@
 				048C6B551D02F7B900ED670F /* YTResultCellWithbkey.xib in Resources */,
 				04BEB9D61CFFF4ED00C272FC /* LaunchScreen.storyboard in Resources */,
 				04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */,
+				0412481B1D0EE56400366240 /* test.txt in Resources */,
 				04BEB9D11CFFF4ED00C272FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,39 +987,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041248171D0EE3A700366240 /* PCReaderViewController.m in Sources */,
 				04CD80611D0AEA6400D839F8 /* YTSetViewController.m in Sources */,
 				04CD80571D0AD9AD00D839F8 /* ZFSettingCell.m in Sources */,
 				048C6B4D1D02E7B000ED670F /* YTparamLoop.m in Sources */,
 				047B2C6C1D0B8F8800EC059D /* YTDetailNobkeyViewController.m in Sources */,
 				04C8233B1D0002A60020A25B /* BookshelfViewController.m in Sources */,
 				04CD803D1D0AA9ED00D839F8 /* YTLeftslideCell.m in Sources */,
+				0412480F1D0EE3A700366240 /* NSString+PCPaging.m in Sources */,
 				048C6B531D02F58100ED670F /* YTResultCellWithbkey.m in Sources */,
 				048F7EB51D01D1CA00DF692E /* YTSearchFooter.m in Sources */,
 				047B2C721D0BFB3800EC059D /* YTBookCollectionViewCell.m in Sources */,
+				041248101D0EE3A700366240 /* PCCollectViewModel.m in Sources */,
 				0479C47D1D025A5800C99F84 /* YTsearchKeyWords.m in Sources */,
+				041248221D0EE99E00366240 /* YTNovelContentController.m in Sources */,
 				04BEBA0C1CFFF8FA00C272FC /* AppDelegate.m in Sources */,
+				041248121D0EE3A700366240 /* PCGlobalModel.m in Sources */,
+				046DA83A1D0E8BC90073D0FA /* MBProgressHUD+YT.m in Sources */,
 				04110B541D053CB00062AA61 /* YTsearchAllResult.m in Sources */,
 				04C30DD21D03F89700A123F5 /* YTSectionHeaderView.m in Sources */,
 				04C30DD51D0400D400A123F5 /* YTresultGroup.m in Sources */,
 				04CD80551D0AD9AD00D839F8 /* ZFSettingGroup.m in Sources */,
 				04B7C07B1D0D8787002286FC /* YTChaptersItem.m in Sources */,
 				047B2C6F1D0BF9BB00EC059D /* YTBookItem.m in Sources */,
+				041248131D0EE3A700366240 /* PCModelViewController.m in Sources */,
 				048F7EB21D01CFA000DF692E /* YTSearchBar.m in Sources */,
 				046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */,
 				040C7B091D09C89400D11610 /* LeftSlideViewController.m in Sources */,
 				047099C81D00405A0066978B /* YTNavController.m in Sources */,
 				04C8233E1D00040A0020A25B /* YTBookstoreViewController.m in Sources */,
 				04CD80681D0AF99800D839F8 /* YTDetailViewController.m in Sources */,
+				04A8FC771D0E5014001BC55C /* YTRegularExpression.m in Sources */,
 				04CD80541D0AD9AD00D839F8 /* ZFBaseSettingViewController.m in Sources */,
 				048F7E7F1D01ADF100DF692E /* UIBarButtonItem+Extension.m in Sources */,
+				041248141D0EE3A700366240 /* PCPageCell.m in Sources */,
 				040C7B0A1D09C89400D11610 /* UIView_extra.m in Sources */,
 				04CD805E1D0ADA6D00D839F8 /* YTSettingViewController.m in Sources */,
 				0479C4A01D02C62D00C99F84 /* YTNavAnimation.m in Sources */,
 				0400AD6B1D058B5500CAE3F1 /* XTPopView.m in Sources */,
 				040870DB1D03F52A00DCB910 /* YTRotateRefreshIcon.m in Sources */,
 				048F7EB11D01CFA000DF692E /* YTSearchViewController.m in Sources */,
+				041248151D0EE3A700366240 /* PCPageView.m in Sources */,
 				047B2C751D0C6A1A00EC059D /* YTSqliteTool.m in Sources */,
 				04CD80561D0AD9AD00D839F8 /* ZFSettingItem.m in Sources */,
+				041248161D0EE3A700366240 /* PCReaderTool.m in Sources */,
+				041248111D0EE3A700366240 /* PCDataViewController.m in Sources */,
 				04BEBA0F1CFFF94400C272FC /* YTTabBarController.m in Sources */,
 				04C823411D00045B0020A25B /* YTDiscoverViewController.m in Sources */,
 				04CD80351D0A4B9500D839F8 /* YTLeftslideViewController.m in Sources */,

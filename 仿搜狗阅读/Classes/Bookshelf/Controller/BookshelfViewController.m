@@ -14,6 +14,10 @@
 #import <UIImageView+WebCache.h>
 #import "YTSqliteTool.h"
 #import "YTBookstoreViewController.h"
+#import "YTRegularExpression.h"
+#import "YTChaptersItem.h"
+#import "YTNovelContentController.h"
+#import "YTDetailNobkeyViewController.h"
 @interface BookshelfViewController ()<selectIndexPathDelegate,UIGestureRecognizerDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSMutableArray *booksArr;
@@ -42,7 +46,7 @@ static NSString * const reuseIdentifier = @"Cell";
   
     [self setupDataBase];
 
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -106,38 +110,22 @@ static NSString * const reuseIdentifier = @"Cell";
     }else{
         NSLog(@"请求txt");
         
-        NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-        
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        [manager GET:@"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=7AD6A96E5F170B19DD4EF908875969EB&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//            NSLog(@"success");
-//            NSLog(@"%@",responseObject);
-//        } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-//            NSLog(@"%@",error);
-//        }];
-        
-        // 1. url
-        NSString *urlStr = @"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=7AD6A96E5F170B19DD4EF908875969EB&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136";
-        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
-        NSURL *url = [NSURL URLWithString:urlStr];
-        
-        // 2. 下载
-        [[[NSURLSession sharedSession] downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-            
-          //  NSLog(@"文件的路径%@", location.path);
-            
-            NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-         //   NSLog(@"%@", cacheDir);
-            /**
-             FileAtPath：要解压缩的文件
-             Destination: 要解压缩到的路径
-             */
-            [SSZipArchive unzipFileAtPath:location.path toDestination:cacheDir];
-            
-        }] resume];
+        // 需要参数 id   url  md  b.a（authoer）  cmd   b.n(name)  loc  eid
+        // 1.由indexPath，从数组取bookitem对象
+        YTBookItem *bookitem = booksArr[indexPath.row];
+        // 2.从bookitem里拿 id md b.a b.m loc，这一步不用写，用在拼接url字符串里
+        // 3.根据name拼接表名，查询章节数据表
+    //    NSString *tableStr = [NSString stringWithFormat:@"t_%@chapters",bookitem.name];
 
+   //     NSMutableArray *chaptersArray = [NSMutableArray arrayWithArray: [YTChaptersItem readDatabaseFromTable:tableStr]];
         
+  //      NSLog(@"%d",chaptersArray.count);
+   
+      //  [self NobkeyChapterContentRequest:@""];
+       NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"txt"];
+        YTNovelContentController *NCVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"NovelContentVC"];
+        [NCVC loadText:[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]];
+         [self.navigationController pushViewController:NCVC animated:YES];
     }
                                             
 }
@@ -222,5 +210,46 @@ static NSString * const reuseIdentifier = @"Cell";
     NSString *sql = @"create table if not exists t_bookshelf (id integer primary key autoincrement,book text,imagekey text,bookid text,md text,count text,author text,loc text,eid text,bkey text,token text);";
     [YTSqliteTool execWithSql:sql];
     
+}
+#pragma mark - 有bkey的书，下载zip文件并解压
+- (void)downloadZip{
+    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    
+    // 1. url
+    NSString *urlStr = @"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=7AD6A96E5F170B19DD4EF908875969EB&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136";
+    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    // 2. 下载
+    [[[NSURLSession sharedSession] downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        
+        //  NSLog(@"文件的路径%@", location.path);
+        
+        NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        //   NSLog(@"%@", cacheDir);
+        /**
+         FileAtPath：要解压缩的文件
+         Destination: 要解压缩到的路径
+         */
+        [SSZipArchive unzipFileAtPath:location.path toDestination:cacheDir];
+        
+    }] resume];
+
+}
+#pragma mark - 针对没bkey的书，需要从两个数据表获取数据，然后拼接url。获取chapters数据表数据，使用异步方式
+- (void)NobkeyChapterContentRequest:(NSString *)urlStr{
+    NSURL *url = [NSURL URLWithString:@"http://api.apt.k.sogou.com/apt/app/chapter?&id=11541197381984290459&url=http%3A%2F%2Fwww.ymoxuan.com%2Fbook%2F29%2F29882%2F11239731.html&md=7650945594029565193&b.a=%E7%BE%BD%E5%8C%96%E8%8B%A5%E5%B0%98&cmd=7650945594029555713&b.n=%E8%8D%92%E5%8F%A4%E6%88%98%E7%BA%AA&loc=0&eid=1136"];
+    
+    // 2. 由session发起任务
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        //解决中文乱码
+        NSStringEncoding strEncode = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        //异步解码
+        NSString *str = [[NSString alloc]initWithData:data encoding:strEncode];
+        NSString *realContent = [YTRegularExpression getChapter:str pattern:@"(\\{).*?\\}.*?(\\})"];
+        
+        NSLog(@"%@",realContent);
+    }] resume];
 }
 @end

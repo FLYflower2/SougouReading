@@ -60,6 +60,7 @@
 
 
 - (IBAction)addToShelf:(id)sender {
+    //下载图片到缓存
    [YTNetCommand downloadAndStoredImage:self.imageUrlStr imageKey:self.bookName];
     //写入书本信息，用于collectionView的显示
    [self insertBookInfoToSqlite];
@@ -109,6 +110,7 @@
     //存图片的key就是用书名，所以sql的两个参数都是bookName
     
     NSString *sql = [NSString stringWithFormat:@"insert into t_bookshelf (book,imagekey,bookid,md,count,author,loc,eid,bkey,token) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@');",self.bookName,self.bookName,self.bookid,self.md,self.count,self.author,self.loc,self.eid,self.bkey,self.token];
+    
     [YTSqliteTool execWithSql:sql];
 }
 
@@ -119,13 +121,15 @@
     [YTSqliteTool execWithSql:sql];
     
 }
-
+#pragma mark - 章节插入数据库
 - (void)insertChaptersItemToSqlite:(NSString *)chapterName  url:(NSString *)url cmd:(NSString *)cmd{
-    
-    NSString *table = [NSString stringWithFormat:@"t_%@chapters",self.bookName];
-    
-    NSString *sql = [NSString stringWithFormat:@"insert into %@ (name,url,cmd) values('%@','%@','%@');",table,chapterName,url,cmd];
-    [YTSqliteTool execWithSql:sql];
+
+        NSString *table = [NSString stringWithFormat:@"t_%@chapters",self.bookName];
+        
+        NSString *sql = [NSString stringWithFormat:@"insert into %@ (name,url,cmd,free,gl,buy,rmb,md5) values('%@','%@','%@','','','','','');",table,chapterName,url,cmd];
+
+        [YTSqliteTool execWithSql:sql];
+
 
 }
 @end

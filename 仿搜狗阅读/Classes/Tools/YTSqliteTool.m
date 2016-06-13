@@ -9,6 +9,7 @@
 #import "YTSqliteTool.h"
 #import <sqlite3.h>
 #import "YTBookItem.h"
+#import "YTChaptersItem.h"
 @implementation YTSqliteTool
 static sqlite3 *_db;
 
@@ -98,6 +99,52 @@ static sqlite3 *_db;
     }
     
     return arrM;
+}
+
++ (NSMutableArray *)selectChaptersWithSql:(NSString *)sql{
+    // 数据库语句的字节数 -1 表示自动计算字节数
+    // ppStmt句柄：用来操作查询的数据
+    sqlite3_stmt *stmt;
+    NSMutableArray *arrM = [NSMutableArray array];
+    
+    if (sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL) == SQLITE_OK) {
+        
+        // 准备成功
+        // 执行句柄
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            
+            int ID = sqlite3_column_int(stmt, 0);
+            
+            
+            // 有数据
+            NSString *free = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 1)];
+            
+            NSString *gl = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 2)];
+            
+            NSString *buy = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 3)];
+            
+            NSString *rmb = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 4)];
+            
+            NSString *name = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 5)];
+            
+            NSString *md5 = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 6)];
+            
+            NSString *url = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 7)];
+            
+            NSString *cmd = [NSString stringWithUTF8String:sqlite3_column_text(stmt, 8)];
+            
+            YTChaptersItem *chaptersItem = [YTChaptersItem ChaptersWithFree:free gl:gl buy:buy rmb:rmb name:name md5:md5 url:url cmd:cmd];
+            
+            
+            
+            [arrM addObject:chaptersItem];
+            
+        }
+        
+    }
+    
+    return arrM;
+
 }
 
 @end

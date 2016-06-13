@@ -29,4 +29,16 @@
 @property(nonatomic,copy)NSString *url;
 
 @property(nonatomic,copy)NSString *cmd;
+
++ (instancetype) ChaptersWithFree:(NSString *)free
+                               gl:(NSString *)gl
+                              buy:(NSString *)buy
+                              rmb:(NSString *)rmb
+                             name:(NSString *)name
+                              md5:(NSString *)md5
+                              url:(NSString *)url
+                              cmd:(NSString *)cmd;
+
++ (NSMutableArray *)readDatabaseFromTable:(NSString *)table;
+
 @end

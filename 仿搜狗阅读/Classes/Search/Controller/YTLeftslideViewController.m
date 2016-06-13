@@ -9,6 +9,7 @@
 #import "YTLeftslideViewController.h"
 #import "YTLeftslideCell.h"
 #import "YTSearchViewController.h"
+
 @interface YTLeftslideViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -105,10 +106,10 @@
 - (IBAction)SettingBtnClick:(id)sender {
     
     NSLog(@"left");
-    [YTNavAnimation NavPushAnimation:self.navigationController.view];
-    YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
-    [[self navigationController]pushViewController:searchVC animated:NO];
-    
+//    [YTNavAnimation NavPushAnimation:self.navigationController.view];
+//    YTSearchViewController *searchVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"searchVC"];
+//    [[self navigationController]pushViewController:searchVC animated:NO];
+
     
 }
 @end
