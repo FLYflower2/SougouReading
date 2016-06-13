@@ -29,7 +29,7 @@
     CTFramesetterRef childFramesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)self.attributedText);
     UIBezierPath * bezierPath = [UIBezierPath bezierPathWithRect:rect];
     CTFrameRef frame = CTFramesetterCreateFrame(childFramesetter, CFRangeMake(0, 0), bezierPath.CGPath, NULL);
- //   CTFrameDraw(frame, context);
+    CTFrameDraw(frame, context);
     CFRelease(frame);
     CFRelease(childFramesetter);
     

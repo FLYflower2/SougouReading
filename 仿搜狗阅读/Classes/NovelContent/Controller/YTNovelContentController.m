@@ -18,10 +18,7 @@
     [super viewDidLoad];
     
     NSLog(@"novel content");
- //   self.view.backgroundColor = [UIColor redColor];
-    // Do any additional setup after loading the view.
-  //  NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"txt"];
- //   [self loadText:[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]];
+
     
 }
 

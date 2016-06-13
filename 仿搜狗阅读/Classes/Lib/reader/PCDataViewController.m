@@ -21,11 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   // self.view.backgroundColor = [UIColor whiteColor];
     //把图片渲染成颜色
     UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"yangpizhi_bg"]];
     self.view.backgroundColor = bgColor;
- //   self.pageView.backgroundColor = bgColor;
+
     self.pageView.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:self.pageView];

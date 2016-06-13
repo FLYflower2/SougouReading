@@ -40,5 +40,7 @@
                               cmd:(NSString *)cmd;
 
 + (NSMutableArray *)readDatabaseFromTable:(NSString *)table;
+//只读取一章，节约开销
++ (NSMutableArray *)readOneChapterFromTable:(NSString *)table Index:(NSInteger)index;
 
 @end

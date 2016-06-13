@@ -24,6 +24,9 @@
     
     NSInteger indexRow;
     BOOL deleteBtnFlag;
+   __block NSString *globalMD5;
+ //   __block NSString *realContent;
+    
 }
 - (IBAction)searchBtnClick:(id)sender;
 - (IBAction)iconBtnClick:(id)sender;
@@ -104,28 +107,67 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
+    
     //如果点击最后一项，就跳转到书城界面
     if (indexPath.row == booksArr.count -1 ) {
          self.tabBarController.selectedIndex = 1;
     }else{
-        NSLog(@"请求txt");
-        
+ 
         // 需要参数 id   url  md  b.a（authoer）  cmd   b.n(name)  loc  eid
         // 1.由indexPath，从数组取bookitem对象
         YTBookItem *bookitem = booksArr[indexPath.row];
-        // 2.从bookitem里拿 id md b.a b.m loc，这一步不用写，用在拼接url字符串里
-        // 3.根据name拼接表名，查询章节数据表
-    //    NSString *tableStr = [NSString stringWithFormat:@"t_%@chapters",bookitem.name];
 
-   //     NSMutableArray *chaptersArray = [NSMutableArray arrayWithArray: [YTChaptersItem readDatabaseFromTable:tableStr]];
+        //2.根据name拼接表名，便于查询章节数据表
+        NSString *tableStr = [NSString stringWithFormat:@"t_%@chapters",bookitem.name];
+        //目前只读取第一章
+        NSInteger pageIndex = 1;
+        NSMutableArray *chaptersArray = [NSMutableArray arrayWithArray: [YTChaptersItem readOneChapterFromTable:tableStr Index:pageIndex]];
+        YTChaptersItem *chapterItem = [[YTChaptersItem alloc]init];
+        for (YTChaptersItem *chapter in chaptersArray) {
+            chapterItem = chapter;
+        }
+        globalMD5 = chapterItem.md5;
+      
+        //有了 bookitem, chapteritem 就可以拼接url来请求数据了
+        if (bookitem.bkey.length > 8) { //没有bkey的，值为"(null)" 所以长度至少要大于6 才能判断
+        //有bkey
+        //有bkey和没bkey请求的url不同，要分开
+        // 3.从bookitem里拿 id md b.a b.m loc，这一步不用写，用在拼接url字符串里
+  
+            NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            //txt文件绝对路径
+            NSString *TxtfilePath = [NSString stringWithFormat:@"%@/%@.txt",cacheDir,chapterItem.md5];
+            NSStringEncoding strEncode = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+            NSString *txt = [NSString stringWithContentsOfFile:TxtfilePath encoding:strEncode error:nil];
+            YTNovelContentController *NCVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"NovelContentVC"];
+            if (txt) {
+                //如果有文件，则直接推送到阅读器打开
+                [NCVC loadText:txt];
+                [self.navigationController pushViewController:NCVC animated:YES];
+            }else{
+                //如果没有文件，则执行下载操作，然后打开
+                NSString *urlStr = [NSString stringWithFormat:@"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=%@&md5=%@&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136",bookitem.bkey,chapterItem.md5];
+                [self downloadZip:urlStr];
+                
+            }
+            
+
+            
+        }else{
+         //没bkey
+            NSLog(@"nobkey");
+            //中文作为请求参数，需要转义
+            bookitem.author = [bookitem.author stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            bookitem.name = [bookitem.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSString *nobkeyUrlStr = [NSString stringWithFormat:@"http://api.apt.k.sogou.com/apt/app/chapter?&id=%@&url=%@&md=%@&b.a=%@&cmd=%@&b.n=%@&loc=%@&eid=1136",bookitem.bookid,chapterItem.url,bookitem.md,bookitem.author,chapterItem.cmd,bookitem.name,bookitem.loc];
+            
+        [self NobkeyChapterContentRequest:nobkeyUrlStr];
+            
+            
+            
+        }
+
         
-  //      NSLog(@"%d",chaptersArray.count);
-   
-      //  [self NobkeyChapterContentRequest:@""];
-       NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"txt"];
-        YTNovelContentController *NCVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"NovelContentVC"];
-        [NCVC loadText:[NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]];
-         [self.navigationController pushViewController:NCVC animated:YES];
     }
                                             
 }
@@ -212,11 +254,11 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 #pragma mark - 有bkey的书，下载zip文件并解压
-- (void)downloadZip{
+- (void)downloadZip:(NSString *)urlStr{
     NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     
     // 1. url
-    NSString *urlStr = @"http://k.sogou.com/s/api/ios/b/d?v=2&count=1&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=7AD6A96E5F170B19DD4EF908875969EB&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136";
+   // NSString *urlStr = @"http://k.sogou.com/s/api/ios/b/d?v=2&count=4&bkey=61A4274B5F148B7FA2A2BDA286E26587&md5=FC42F0A7EBCF5ADD2928E2AA1ED27327&uid=80C5B623E2F3031DC4B1874096C54217@qq.sohu.com&token=4244558c08b4ee4e9791b06cca4ec139&eid=1136";
     urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSURL *url = [NSURL URLWithString:urlStr];
@@ -234,22 +276,43 @@ static NSString * const reuseIdentifier = @"Cell";
          */
         [SSZipArchive unzipFileAtPath:location.path toDestination:cacheDir];
         
+
+         NSString *downloadedTxtfilePath = [NSString stringWithFormat:@"%@/%@.txt",cacheDir,globalMD5];
+         NSStringEncoding strEncode = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+         NSString *downloadedTxt = [NSString stringWithContentsOfFile:downloadedTxtfilePath encoding:strEncode error:nil];
+          YTNovelContentController *NCV = [[self storyboard]instantiateViewControllerWithIdentifier:@"NovelContentVC"];
+          dispatch_async(dispatch_get_main_queue(), ^{
+              
+        [NCV loadText:downloadedTxt];
+        [self.navigationController pushViewController:NCV animated:YES];
+              
+        });
     }] resume];
 
 }
 #pragma mark - 针对没bkey的书，需要从两个数据表获取数据，然后拼接url。获取chapters数据表数据，使用异步方式
+#pragma mark - 请求成功后，直接把内容推送到阅读器界面
 - (void)NobkeyChapterContentRequest:(NSString *)urlStr{
-    NSURL *url = [NSURL URLWithString:@"http://api.apt.k.sogou.com/apt/app/chapter?&id=11541197381984290459&url=http%3A%2F%2Fwww.ymoxuan.com%2Fbook%2F29%2F29882%2F11239731.html&md=7650945594029565193&b.a=%E7%BE%BD%E5%8C%96%E8%8B%A5%E5%B0%98&cmd=7650945594029555713&b.n=%E8%8D%92%E5%8F%A4%E6%88%98%E7%BA%AA&loc=0&eid=1136"];
-    
+
+    NSURL *url = [NSURL URLWithString:urlStr];
     // 2. 由session发起任务
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         //解决中文乱码
         NSStringEncoding strEncode = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
         //异步解码
         NSString *str = [[NSString alloc]initWithData:data encoding:strEncode];
-        NSString *realContent = [YTRegularExpression getChapter:str pattern:@"(\\{).*?\\}.*?(\\})"];
-        
-        NSLog(@"%@",realContent);
+        NSString * realContent = [YTRegularExpression getChapter:str pattern:@"(\\{).*?\\}.*?(\\})"];
+       //跳转到阅读器界面,必须在主线程里执行
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+              YTNovelContentController *NCVC = [[self storyboard]instantiateViewControllerWithIdentifier:@"NovelContentVC"];
+              [NCVC loadText:realContent];
+            
+              [self.navigationController pushViewController:NCVC animated:YES];
+        });
+
     }] resume];
 }
+
+
 @end

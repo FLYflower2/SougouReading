@@ -24,6 +24,7 @@
 		041248171D0EE3A700366240 /* PCReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412480E1D0EE3A700366240 /* PCReaderViewController.m */; };
 		0412481B1D0EE56400366240 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0412481A1D0EE56400366240 /* test.txt */; };
 		041248221D0EE99E00366240 /* YTNovelContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041248211D0EE99E00366240 /* YTNovelContentController.m */; };
+		041248241D0F259000366240 /* 3C040D28A330AB1CAA1708B834BB43A0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 041248231D0F259000366240 /* 3C040D28A330AB1CAA1708B834BB43A0.txt */; };
 		046AAF351D0323FF00E0ED80 /* YTResultCellNobkey.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046AAF341D0323FF00E0ED80 /* YTResultCellNobkey.xib */; };
 		046AAF3B1D03296900E0ED80 /* YTResultCellNobkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 046AAF3A1D03296900E0ED80 /* YTResultCellNobkey.m */; };
 		046DA83A1D0E8BC90073D0FA /* MBProgressHUD+YT.m in Sources */ = {isa = PBXBuildFile; fileRef = 046DA8391D0E8BC90073D0FA /* MBProgressHUD+YT.m */; };
@@ -128,6 +129,7 @@
 		0412481A1D0EE56400366240 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		041248201D0EE99E00366240 /* YTNovelContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNovelContentController.h; sourceTree = "<group>"; };
 		041248211D0EE99E00366240 /* YTNovelContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNovelContentController.m; sourceTree = "<group>"; };
+		041248231D0F259000366240 /* 3C040D28A330AB1CAA1708B834BB43A0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3C040D28A330AB1CAA1708B834BB43A0.txt; sourceTree = "<group>"; };
 		046AAF341D0323FF00E0ED80 /* YTResultCellNobkey.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTResultCellNobkey.xib; sourceTree = "<group>"; };
 		046AAF391D03296900E0ED80 /* YTResultCellNobkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTResultCellNobkey.h; sourceTree = "<group>"; };
 		046AAF3A1D03296900E0ED80 /* YTResultCellNobkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTResultCellNobkey.m; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				04BEB9CF1CFFF4ED00C272FC /* Main.storyboard */,
 				04BEB9D21CFFF4ED00C272FC /* Assets.xcassets */,
 				04BEB9D41CFFF4ED00C272FC /* LaunchScreen.storyboard */,
+				041248231D0F259000366240 /* 3C040D28A330AB1CAA1708B834BB43A0.txt */,
 				0412481A1D0EE56400366240 /* test.txt */,
 				04BEB9D71CFFF4ED00C272FC /* Info.plist */,
 				04BEB9C61CFFF4ED00C272FC /* Supporting Files */,
@@ -910,6 +913,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046AAF351D0323FF00E0ED80 /* YTResultCellNobkey.xib in Resources */,
+				041248241D0F259000366240 /* 3C040D28A330AB1CAA1708B834BB43A0.txt in Resources */,
 				048C6B551D02F7B900ED670F /* YTResultCellWithbkey.xib in Resources */,
 				04BEB9D61CFFF4ED00C272FC /* LaunchScreen.storyboard in Resources */,
 				04BEB9D31CFFF4ED00C272FC /* Assets.xcassets in Resources */,

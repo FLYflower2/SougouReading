@@ -60,4 +60,13 @@
 
     return chaptersArray;
 }
+//只读取一章，解决开销
++ (NSMutableArray *)readOneChapterFromTable:(NSString *)table Index:(NSInteger )index{
+    NSMutableArray *chaptersArray = [NSMutableArray array];
+    NSString *sql = [NSString stringWithFormat:@"select * from %@ where id=%d;",table,index];
+    
+    chaptersArray = [YTSqliteTool selectChaptersWithSql:sql];
+    
+    return chaptersArray;
+}
 @end
